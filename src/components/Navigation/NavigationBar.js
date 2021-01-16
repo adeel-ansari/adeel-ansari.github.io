@@ -1,6 +1,8 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
 
 const NavigationBar = () => {
 
@@ -10,7 +12,15 @@ const NavigationBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Item as="li">
+                        <Nav.Link as={Link} to='/home'>Home</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item as="li">
+                        <Nav.Link as={Link} to='/ontologies'>Ontologies</Nav.Link>
+                    </Nav.Item>
+                    {/* <Nav.Link href="#about">About</Nav.Link> */}
+                    {/* <Nav.Link href="#ontologies">Ontologies</Nav.Link> */}
+                    {/* <Nav.Link href="#demo">Demo</Nav.Link> */}
                     {/* <NavDropdown title="Ontologies" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#ontology/strategicchoicecascade">Strategic Choice Cascade</NavDropdown.Item>
                         <NavDropdown.Item href="#ontology/businessmodel">Business Model</NavDropdown.Item>

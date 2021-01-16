@@ -1,54 +1,38 @@
 // App.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 import './App.css';
 import NavigationBar from './components/Navigation/NavigationBar';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Tabview from './components/Tabview/Tabview';
+import OntologyHome from './components/Ontology/OntologyHome';
 import Home from './components/Home/Home';
-
-// const graph = ({
-//   nodes: Array.from({ length: 13 }, () => ({})),
-//   links: [
-//       { source: 0, target: 1 },
-//       { source: 1, target: 2 },
-//       { source: 2, target: 0 },
-//       { source: 1, target: 3 },
-//       { source: 3, target: 2 },
-//       { source: 3, target: 4 },
-//       { source: 4, target: 5 },
-//       { source: 5, target: 6 },
-//       { source: 5, target: 7 },
-//       { source: 6, target: 7 },
-//       { source: 6, target: 8 },
-//       { source: 7, target: 8 },
-//       { source: 9, target: 4 },
-//       { source: 9, target: 11 },
-//       { source: 9, target: 10 },
-//       { source: 10, target: 11 },
-//       { source: 11, target: 12 },
-//       { source: 12, target: 10 }
-//   ]
-// });
-
-
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Layout } from './components/Layout/Layout';
 
 function App() {
 
   const [data] = useState([]);
 
   return (
-    <div className="App">
+    <BrowserRouter>
       <header>
         <NavigationBar />
       </header>
+      <br>
+      </br>
+      <React.Fragment>
+        <Layout>
+          <Switch>
+            <Route exact path='/home' component={Home} />
+            <Route exact path='/ontologies' component={OntologyHome} />
+            <Route exact path='/ontologyDetail' component={Tabview} />
+          </Switch>
+        </Layout>
+      </React.Fragment>
       <br />
-      <Home />
-      {/* <h1 align="center">Strategic Choice Cascade</h1> */}
-      {/* <Container>
-        <Tabview />
-      </Container> */}
-    </div>
+    </BrowserRouter>
+
   );
 }
 

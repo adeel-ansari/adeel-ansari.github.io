@@ -34,10 +34,8 @@ const Tabview = () => {
     return (
         <Tabs defaultActiveKey="graphview" id="uncontrolled-tab-example">
             <Tab eventKey="gridview" title="Grid View">
-                <Container>
                     <br />
                     <StrategyGridView />
-                </Container>
             </Tab>
             <Tab eventKey="graphview" title="Graph View">
                 <Container>
