@@ -13,7 +13,7 @@ const NavigationBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Item as="li">
-                        <Nav.Link as={Link} to='/home'>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item as="li">
                         <Nav.Link as={Link} to='/ontologies'>Ontologies</Nav.Link>
