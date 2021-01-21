@@ -17,10 +17,10 @@ const OntologyHome = () => {
                         activities.
                     </Card.Text>
                     <Button
-                        // as={Link}
-                        // to="/ontologyDetail"
-                        // variant="primary"
-                        disabled>
+                        as={Link}
+                        to="/ontologyDetail"
+                        variant="primary"
+                    >
                         Enter
                     </Button>
                 </Card.Body>

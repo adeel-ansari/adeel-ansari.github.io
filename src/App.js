@@ -25,8 +25,8 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/ontologies' component={OntologyHome} />
-            <Route exact path='/ontologyDetail' component={Tabview} />
+            <Route path='/ontologies' component={OntologyHome} />
+            <Route path='/ontologyDetail' component={Tabview} />
           </Switch>
         </Layout>
       </React.Fragment>

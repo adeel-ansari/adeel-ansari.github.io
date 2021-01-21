@@ -1,7 +1,7 @@
 // ForceGraph.js
 import * as d3 from 'd3';
 import React, { useRef, useEffect } from 'react';
-import './ForceGraph.css'
+//import './ForceGraph.css'
 
 function clamp(x, lo, hi) {
     return x < lo ? lo : x > hi ? hi : x;
@@ -34,12 +34,12 @@ function ForceGraph3({ width, height, graph }) {
         // Add one circle in each group
         node.append("circle")
             .attr("class", "node")
-            .attr("r", 8);
+            .attr("r", 14);
 
         node.append("text")
             .attr("x", 6)
             .attr("y", "0.31em")
-            .text(d => d.name)
+            .text(d => d.id)
 
         const link = svg.append("g")
             .attr("stroke", "#999")
@@ -55,7 +55,7 @@ function ForceGraph3({ width, height, graph }) {
             .nodes(graph.nodes)
             .force("charge", d3.forceManyBody())
             .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("link", d3.forceLink().links(graph.links).id(d=>d.name))
+            .force("link", d3.forceLink().links(graph.links).id(d=>d.id))
             .on("tick", tick);
 
             

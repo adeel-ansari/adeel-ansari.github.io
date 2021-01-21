@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "azure-functions-core-tools": "^3.0.3233",
     "bootstrap": "^4.5.3",
     "d3": "^6.3.1",
     "file-system": "^2.2.2",
