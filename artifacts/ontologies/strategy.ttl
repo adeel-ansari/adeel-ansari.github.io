@@ -1,453 +1,385 @@
-@prefix : <https://www.manukalabs.com/ontologies/strategy#> .
+@prefix : <https://www.adeel-ansari.github.io/ontologies/strategy#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://www.adeel-ansari.github.io/ontologies/strategy> .
 
-<https://www.businessontology.com/ontologies/strategy> a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/dc/terms/bibliographicCitation
+<https://www.adeel-ansari.github.io/ontologies/strategy> rdf:type owl:Ontology .
 
-dcterms:bibliographicCitation a owl:AnnotationProperty .
-# 
-# http://purl.org/dc/terms/description
+#################################################################
+#    Annotation properties
+#################################################################
 
-dcterms:description a owl:AnnotationProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# https://www.businessontology.com/ontologies/strategy/ContainerElement
+###  http://purl.org/dc/terms/bibliographicCitation
+dcterms:bibliographicCitation rdf:type owl:AnnotationProperty .
 
-<https://www.businessontology.com/ontologies/strategy/ContainerElement> a rdfs:Datatype .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# https://www.businessontology.com/ontologies/strategy#ActivitySystem.coreCapability
 
-<https://www.businessontology.com/ontologies/strategy#ActivitySystem.coreCapability> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#ActivitySystem> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#CoreCapability.reinforcingRelationship
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
 
-<https://www.businessontology.com/ontologies/strategy#CoreCapability.reinforcingRelationship> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "Reinforcing relationships link core capabilities within the same organization."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#CoreCapability.reinforcingRod
 
-<https://www.businessontology.com/ontologies/strategy#CoreCapability.reinforcingRod> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "Reinforcing rods link core capabilities across different organizations."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#CoreCapability.supportingActivity
+#################################################################
+#    Datatypes
+#################################################################
 
-<https://www.businessontology.com/ontologies/strategy#CoreCapability.supportingActivity> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#Activity> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#Organization.activitySystem
+###  https://www.adeel-ansari.io/ontologies/strategy#ContainerElement
+<https://www.adeel-ansari.io/ontologies/strategy#ContainerElement> rdf:type rdfs:Datatype .
 
-<https://www.businessontology.com/ontologies/strategy#Organization.activitySystem> a owl:ObjectProperty ;
-	rdfs:domain <http://www.w3.org/ns/org#Organization> .
 
-<http://www.w3.org/ns/org#Organization> a owl:Class .
+#################################################################
+#    Object Properties
+#################################################################
 
-<https://www.businessontology.com/ontologies/strategy#Organization.activitySystem> rdfs:range <https://www.businessontology.com/ontologies/strategy#ActivitySystem> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#Organization.strategy
+###  https://www.adeel-ansari.github.io/ontologies/strategy#ActivitySystem.coreCapability
+:ActivitySystem.coreCapability rdf:type owl:ObjectProperty ;
+                               rdfs:domain :ActivitySystem ;
+                               rdfs:range :CoreCapability ;
+                               dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy#Organization.strategy> a owl:ObjectProperty ;
-	rdfs:domain <http://xmlns.com/foaf/0.1/Organization> .
 
-<http://xmlns.com/foaf/0.1/Organization> a owl:Class .
+###  https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability.reinforcingRelationship
+:CoreCapability.reinforcingRelationship rdf:type owl:ObjectProperty ;
+                                        rdfs:domain :CoreCapability ;
+                                        rdfs:range :CoreCapability ;
+                                        dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                        dcterms:description "Reinforcing relationships link core capabilities within the same organization."@en .
 
-<https://www.businessontology.com/ontologies/strategy#Organization.strategy> rdfs:range <https://www.businessontology.com/ontologies/strategy#strategy> .
-# 
-# https://www.businessontology.com/ontologies/strategy#WinningAspiration.competitorContext
 
-<https://www.businessontology.com/ontologies/strategy#WinningAspiration.competitorContext> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WinningAspiration> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#Competitor> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "A winning aspiration defines who the organization/agent is winning with and against.  This property captures who the organization is focused on winning against i.e. the very best competitors."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#WinningAspiration.consumerContext
+###  https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability.reinforcingRod
+:CoreCapability.reinforcingRod rdf:type owl:ObjectProperty ;
+                               rdfs:domain :CoreCapability ;
+                               rdfs:range :CoreCapability ;
+                               dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                               dcterms:description "Reinforcing rods link core capabilities across different organizations."@en .
 
-<https://www.businessontology.com/ontologies/strategy#WinningAspiration.consumerContext> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WinningAspiration> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#ConsumerSegment> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "A winning aspiration defines who the organization/agent is winning with and against.  This property captures who the organization is focused on winning with i.e. the most important consumers."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Consumer.consumerSegment
 
-<https://www.businessontology.com/ontologies/strategy/Consumer.consumerSegment> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy/Consumer> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#ConsumerSegment> .
-# 
-# https://www.businessontology.com/ontologies/strategy/Customer.customerSegment
+###  https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability.supportingActivity
+:CoreCapability.supportingActivity rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :CoreCapability ;
+                                   rdfs:range :Activity ;
+                                   dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy/Customer.customerSegment> a owl:ObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy/Customer> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy/CustomerSegment> .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.coreCapability
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.coreCapability> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.howToWin
+###  https://www.adeel-ansari.github.io/ontologies/strategy#Organization.activitySystem
+:Organization.activitySystem rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+                             rdfs:range :ActivitySystem ;
+                             dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.howToWin> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#HowToWin> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.managementSystem
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.managementSystem> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#ManagementSystem> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.status
+###  https://www.adeel-ansari.github.io/ontologies/strategy#Organization.strategy
+:Organization.strategy rdf:type owl:ObjectProperty ;
+                       rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+                       rdfs:range :strategy .
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.status> a owl:ObjectProperty ;
-	dcterms:description "Whether the strategy is in active use, draft, or no longer in use."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.whereToPlay
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.whereToPlay> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.winningAspiration
+###  https://www.adeel-ansari.github.io/ontologies/strategy#WinningAspiration.competitorContext
+:WinningAspiration.competitorContext rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     rdfs:domain :WinningAspiration ;
+                                     rdfs:range <http://www.w3.org/ns/org#Organization> ;
+                                     dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                     dcterms:description "A winning aspiration defines who the organization/agent is winning with and against.  This property captures who the organization is focused on winning against i.e. the very best competitors."@en .
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.winningAspiration> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#WinningAspiration> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/WhereToPlay.consumerSegment
 
-<https://www.businessontology.com/ontologies/strategy/WhereToPlay.consumerSegment> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy#ConsumerSegment> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "What groups of consumers will you target? In which price tier? Meeting which consumer needs?"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/WhereToPlay.distributionChannel
+###  https://www.adeel-ansari.github.io/ontologies/strategy#WinningAspiration.consumerContext
+:WinningAspiration.consumerContext rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :WinningAspiration ;
+                                   rdfs:range :ConsumerSegment ;
+                                   dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                   dcterms:description "A winning aspiration defines who the organization/agent is winning with and against.  This property captures who the organization is focused on winning with i.e. the most important consumers."@en .
 
-<https://www.businessontology.com/ontologies/strategy/WhereToPlay.distributionChannel> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy/DistributionChannel> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "How will you reach your customers? What channels will you use?"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/WhereToPlay.geography
 
-<https://www.businessontology.com/ontologies/strategy/WhereToPlay.geography> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy/Geography> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "In what countries or regions will you seek to compete?"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/WhereToPlay.productType
+###  https://www.adeel-ansari.io/ontologies/strategy#Consumer.consumerSegment
+<https://www.adeel-ansari.io/ontologies/strategy#Consumer.consumerSegment> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <https://www.adeel-ansari.io/ontologies/strategy#Consumer> ;
+                                                                           rdfs:range :ConsumerSegment .
 
-<https://www.businessontology.com/ontologies/strategy/WhereToPlay.productType> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy/ProductType> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "Types of products and services being offered"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/WhereToPlay.verticalStageOfProduction
 
-<https://www.businessontology.com/ontologies/strategy/WhereToPlay.verticalStageOfProduction> a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdfs:range <https://www.businessontology.com/ontologies/strategy/VerticalStageOfProduction> ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "The stages of production the organization is engaging in and where along the value chain."@en .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# https://www.businessontology.com/ontologies/strategy#WinningAspiration.AspirationStatement
+###  https://www.adeel-ansari.io/ontologies/strategy#Customer.customerSegment
+<https://www.adeel-ansari.io/ontologies/strategy#Customer.customerSegment> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <https://www.adeel-ansari.io/ontologies/strategy#Customer> ;
+                                                                           rdfs:range <https://www.adeel-ansari.io/ontologies/strategy#CustomerSegment> .
 
-<https://www.businessontology.com/ontologies/strategy#WinningAspiration.AspirationStatement> a owl:DatatypeProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#WinningAspiration> ;
-	rdfs:range xsd:string .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.endDate
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.endDate> a owl:DatatypeProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range xsd:dateTime .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.startDate
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.coreCapability
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.coreCapability> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain :strategy ;
+                                                                          rdfs:range :CoreCapability ;
+                                                                          dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.startDate> a owl:DatatypeProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range xsd:dateTime .
-# 
-# https://www.businessontology.com/ontologies/strategy/Strategy.title
 
-<https://www.businessontology.com/ontologies/strategy/Strategy.title> a owl:DatatypeProperty ;
-	rdfs:domain <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdfs:range xsd:string .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/ns/org#Organization
-# 
-# http://xmlns.com/foaf/0.1/Agent
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.howToWin
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.howToWin> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain :strategy ;
+                                                                    rdfs:range :HowToWin ;
+                                                                    dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
-# 
-# http://xmlns.com/foaf/0.1/Organization
-# 
-# https://www.businessontology.com/ontologies/strategy#Activity
 
-<https://www.businessontology.com/ontologies/strategy#Activity> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy#ActivitySystem
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.managementSystem
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.managementSystem> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                            rdfs:domain :strategy ;
+                                                                            rdfs:range :ManagementSystem ;
+                                                                            dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy#ActivitySystem> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy#Competitor
 
-<https://www.businessontology.com/ontologies/strategy#Competitor> a owl:Class ;
-	rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
-# 
-# https://www.businessontology.com/ontologies/strategy#ConsumerSegment
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.status
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.status> rdf:type owl:ObjectProperty ;
+                                                                  dcterms:description "Whether the strategy is in active use, draft, or no longer in use."@en .
 
-<https://www.businessontology.com/ontologies/strategy#ConsumerSegment> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy#CoreCapability
 
-<https://www.businessontology.com/ontologies/strategy#CoreCapability> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "The set and configuration of capabilities required to win in the chosen way."@en ;
-	rdfs:label "Core Capability"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#HowToWin
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.whereToPlay
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.whereToPlay> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain :strategy ;
+                                                                       rdfs:range :WhereToPlay ;
+                                                                       dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
 
-<https://www.businessontology.com/ontologies/strategy#HowToWin> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description """The way you will win on your chosen playing field.  This can typically be done is two ways: cost leadership and differentiation.  Ultimately, the goal is to sustainably provide a greater margin between revenue and costs that competitors cannot match.  
+
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.winningAspiration
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.winningAspiration> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                             rdfs:domain :strategy ;
+                                                                             rdfs:range :WinningAspiration ;
+                                                                             dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.consumerSegment
+<https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.consumerSegment> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                              rdfs:domain :WhereToPlay ;
+                                                                              rdfs:range :ConsumerSegment ;
+                                                                              dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                              dcterms:description "What groups of consumers will you target? In which price tier? Meeting which consumer needs?"@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.distributionChannel
+<https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.distributionChannel> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                  rdfs:domain :WhereToPlay ;
+                                                                                  rdfs:range <https://www.adeel-ansari.io/ontologies/strategy#DistributionChannel> ;
+                                                                                  dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                                  dcterms:description "How will you reach your customers? What channels will you use?"@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.geography
+<https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.geography> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain :WhereToPlay ;
+                                                                        rdfs:range <https://www.adeel-ansari.io/ontologies/strategy#Geography> ;
+                                                                        dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                        dcterms:description "In what countries or regions will you seek to compete?"@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.productType
+<https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.productType> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                          rdfs:domain :WhereToPlay ;
+                                                                          rdfs:range <https://www.adeel-ansari.io/ontologies/strategy#ProductType> ;
+                                                                          dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                          dcterms:description "Types of products and services being offered"@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.verticalStageOfProduction
+<https://www.adeel-ansari.io/ontologies/strategy#WhereToPlay.verticalStageOfProduction> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                        rdfs:domain :WhereToPlay ;
+                                                                                        rdfs:range <https://www.adeel-ansari.io/ontologies/strategy#VerticalStageOfProduction> ;
+                                                                                        dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                                        dcterms:description "The stages of production the organization is engaging in and where along the value chain."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#WinningAspiration.AspirationStatement
+:WinningAspiration.AspirationStatement rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :WinningAspiration ;
+                                       rdfs:range xsd:string ;
+                                       dcterms:description "For the Winning Aspiration, what is the aspirational statement that the organization is trying to achieve."@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.endDate
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.endDate> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:domain :strategy ;
+                                                                   rdfs:range xsd:dateTime ;
+                                                                   dcterms:description "When the organization stopped following this strategy."@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.startDate
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.startDate> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:domain :strategy ;
+                                                                     rdfs:range xsd:dateTime ;
+                                                                     dcterms:description "When the organization started following this strategy."@en .
+
+
+###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.title
+<https://www.adeel-ansari.io/ontologies/strategy#Strategy.title> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain :strategy ;
+                                                                 rdfs:range xsd:string ;
+                                                                 dcterms:description "Human-readable title for the strategy."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/org#Organization
+<http://www.w3.org/ns/org#Organization> rdf:type owl:Class ;
+                                        rdfs:isDefinedBy "https://www.w3.org/TR/vocab-org/#org:Organization"@en ;
+                                        rdfs:label "Organization"@en .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#Activity
+:Activity rdf:type owl:Class ;
+          dcterms:description """Core capabilities are activities that allow an organization to deliver upon it's where-to-play and how-to-win choices.
+
+Activities in this sense are the subordinate nodes of an activity system that support the core capabilities."""@en ;
+          rdfs:label "Activity"@en .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#ActivitySystem
+:ActivitySystem rdf:type owl:Class ;
+                dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                dcterms:description """Activity System refers to the understanding that an organizations core capabilities operate as a system of reinforcing activities.  This set of activities, which is uniquely different from competitors, is essentially the organizations competitive advantage.
+
+The activity system will be a composition of the core capabilities, the relationships between them, and the activities that support them."""@en ;
+                rdfs:label "Activity System"@en .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#ConsumerSegment
+:ConsumerSegment rdf:type owl:Class ;
+                 dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                 dcterms:description """Consumer segmentation is a technique used to divide the total set of consumers into groups based on a set of characteristics.  The division into groups allows an organization to understand it's consumers better and target each one appropriately (i.e. through marketing, product development, etc.).
+
+The consumer segment is defining which group of consumers the organization will target, at which price tier and meeting which consumer need."""@en ;
+                 rdfs:label "Consumer Segment"@en .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability
+:CoreCapability rdf:type owl:Class ;
+                dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                dcterms:description "The set and configuration of capabilities required to win in the chosen way."@en ;
+                rdfs:label "Core Capability"@en .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#HowToWin
+:HowToWin rdf:type owl:Class ;
+          dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+          dcterms:description """The way you will win on your chosen playing field.  This can typically be done is two ways: cost leadership and differentiation.  Ultimately, the goal is to sustainably provide a greater margin between revenue and costs that competitors cannot match.  
 
 When defining the organizations 'How to Win' choices, consider your competitive advantage and also the value proposition."""@en ;
-	rdfs:label "How to win"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#ManagementSystem
+          rdfs:label "How to win"@en .
 
-<https://www.businessontology.com/ontologies/strategy#ManagementSystem> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "The systems and measures that enable the capabilities and support the choices."@en ;
-	rdfs:label "Management systems"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#WhereToPlay
 
-<https://www.businessontology.com/ontologies/strategy#WhereToPlay> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "The playing field to achieve that aspiration."@en ;
-	rdfs:label "Where to play"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#WinningAspiration
+###  https://www.adeel-ansari.github.io/ontologies/strategy#ManagementSystem
+:ManagementSystem rdf:type owl:Class ;
+                  dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                  dcterms:description "The systems and measures that enable the capabilities and support the choices."@en ;
+                  rdfs:label "Management systems"@en .
 
-<https://www.businessontology.com/ontologies/strategy#WinningAspiration> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "\"Winning Aspiration\" is meant to capture the purpose of your organization."@en ;
-	rdfs:label "Winning Aspiration"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#competitive_advantage
 
-<https://www.businessontology.com/ontologies/strategy#competitive_advantage> a owl:Class ;
-	rdfs:label "Competitive Advantage"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#strategy
+###  https://www.adeel-ansari.github.io/ontologies/strategy#WhereToPlay
+:WhereToPlay rdf:type owl:Class ;
+             dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+             dcterms:description "The playing field to achieve that aspiration."@en ;
+             rdfs:label "Where to Play"@en .
 
-<https://www.businessontology.com/ontologies/strategy#strategy> a owl:Class ;
-	dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
-	dcterms:description "In the book, \"Playing to Win\", strategy is defined as \"an integrated set of choices that uniquely positions the firm in its industry so as to create sustainable advantage and superior value relative to the competition.\""@en ;
-	rdfs:label "Strategy"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy#value_proposition
 
-<https://www.businessontology.com/ontologies/strategy#value_proposition> a owl:Class ;
-	rdfs:label "Value Proposition"@en .
-# 
-# https://www.businessontology.com/ontologies/strategy/Consumer
+###  https://www.adeel-ansari.github.io/ontologies/strategy#WinningAspiration
+:WinningAspiration rdf:type owl:Class ;
+                   dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                   dcterms:description "\"Winning Aspiration\" is meant to capture the purpose of your organization."@en ;
+                   rdfs:label "Winning Aspiration"@en .
 
-<https://www.businessontology.com/ontologies/strategy/Consumer> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/Customer
 
-<https://www.businessontology.com/ontologies/strategy/Customer> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/CustomerSegment
+###  https://www.adeel-ansari.github.io/ontologies/strategy#competitive_advantage
+:competitive_advantage rdf:type owl:Class ;
+                       dcterms:description "A competitive advantage refers to one or more factors that allows an organization to produce gooes and/or services better or more efficiently than its competitors."@en ;
+                       rdfs:label "Competitive Advantage"@en .
 
-<https://www.businessontology.com/ontologies/strategy/CustomerSegment> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/DistributionChannel
 
-<https://www.businessontology.com/ontologies/strategy/DistributionChannel> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/ExternalCustomer
+###  https://www.adeel-ansari.github.io/ontologies/strategy#strategy
+:strategy rdf:type owl:Class ;
+          dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+          dcterms:description "In the book, \"Playing to Win\", strategy is defined as \"an integrated set of choices that uniquely positions the firm in its industry so as to create sustainable advantage and superior value relative to the competition.\""@en ;
+          rdfs:label "Strategy"@en .
 
-<https://www.businessontology.com/ontologies/strategy/ExternalCustomer> a owl:Class ;
-	rdfs:subClassOf <https://www.businessontology.com/ontologies/strategy/Customer> .
-# 
-# https://www.businessontology.com/ontologies/strategy/Geography
 
-<https://www.businessontology.com/ontologies/strategy/Geography> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/InternalCustomer
+###  https://www.adeel-ansari.github.io/ontologies/strategy#value_proposition
+:value_proposition rdf:type owl:Class ;
+                   dcterms:description "A value proposition is referring to the value an organization is promising to deliver to its customers and consumers if they buy their products or services.  It's basically telling a consumer why they should buy a product or a service from the organization."@en ;
+                   rdfs:label "Value Proposition"@en .
 
-<https://www.businessontology.com/ontologies/strategy/InternalCustomer> a owl:Class ;
-	rdfs:subClassOf <https://www.businessontology.com/ontologies/strategy/Customer> .
-# 
-# https://www.businessontology.com/ontologies/strategy/ProductType
 
-<https://www.businessontology.com/ontologies/strategy/ProductType> a owl:Class .
-# 
-# https://www.businessontology.com/ontologies/strategy/VerticalStageOfProduction
+###  https://www.adeel-ansari.io/ontologies/strategy#Consumer
+<https://www.adeel-ansari.io/ontologies/strategy#Consumer> rdf:type owl:Class ;
+                                                           dcterms:description "The consumer is a person or organization that is actually using the goods or services offerred by your organization."@en ;
+                                                           rdfs:label "Consumer"@en .
 
-<https://www.businessontology.com/ontologies/strategy/VerticalStageOfProduction> a owl:Class .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    General axioms
-# #
-# #################################################################
-# 
-# 
 
-_:genid1 a owl:AllDisjointClasses ;
-	owl:members _:genid17 .
+###  https://www.adeel-ansari.io/ontologies/strategy#Customer
+<https://www.adeel-ansari.io/ontologies/strategy#Customer> rdf:type owl:Class ;
+                                                           dcterms:description """The person or organization that is buying the goods or services from the organization.
 
-_:genid17 a rdf:List ;
-	rdf:first <http://www.w3.org/ns/org#Organization> ;
-	rdf:rest _:genid16 .
+Note that the customer is not always the consumer of the product or service."""@en ;
+                                                           rdfs:label "Customer"@en .
 
-_:genid16 a rdf:List ;
-	rdf:first <http://xmlns.com/foaf/0.1/Agent> ;
-	rdf:rest _:genid15 .
 
-_:genid15 a rdf:List ;
-	rdf:first <http://xmlns.com/foaf/0.1/Organization> ;
-	rdf:rest _:genid14 .
+###  https://www.adeel-ansari.io/ontologies/strategy#CustomerSegment
+<https://www.adeel-ansari.io/ontologies/strategy#CustomerSegment> rdf:type owl:Class ;
+                                                                  dcterms:description """The customer segment is defining which group of customers the organization will target through its pricing, product features, and marketing.
 
-_:genid14 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#Activity> ;
-	rdf:rest _:genid13 .
+Note that a customer is not always the consumer.  Therefore, this segmentation technique is focused on who will be purchasing the product or service."""@en ;
+                                                                  rdfs:label "Customer Segment"@en .
 
-_:genid13 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#ActivitySystem> ;
-	rdf:rest _:genid12 .
 
-_:genid12 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#ConsumerSegment> ;
-	rdf:rest _:genid11 .
+###  https://www.adeel-ansari.io/ontologies/strategy#DistributionChannel
+<https://www.adeel-ansari.io/ontologies/strategy#DistributionChannel> rdf:type owl:Class ;
+                                                                      dcterms:bibliographicCitation "Defines how the organization will reach its customers and what channels will be used to reach the customers."@en ,
+                                                                                                    "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                      rdfs:label "Distribution Channel"@en .
 
-_:genid11 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#CoreCapability> ;
-	rdf:rest _:genid10 .
 
-_:genid10 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#HowToWin> ;
-	rdf:rest _:genid9 .
+###  https://www.adeel-ansari.io/ontologies/strategy#ExternalCustomer
+<https://www.adeel-ansari.io/ontologies/strategy#ExternalCustomer> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://www.adeel-ansari.io/ontologies/strategy#Customer> ;
+                                                                   dcterms:description "An external customer is a customer who purchases the organizations services or products but isn't an employee of the organization or a part of the organization."@en ;
+                                                                   rdfs:label "External Customer"@en .
 
-_:genid9 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#ManagementSystem> ;
-	rdf:rest _:genid8 .
 
-_:genid8 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#WhereToPlay> ;
-	rdf:rest _:genid7 .
+###  https://www.adeel-ansari.io/ontologies/strategy#Geography
+<https://www.adeel-ansari.io/ontologies/strategy#Geography> rdf:type owl:Class ;
+                                                            dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                            dcterms:description "Captures in what countries or regions the organization will compete."@en ;
+                                                            rdfs:label "Geography"@en .
 
-_:genid7 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#WinningAspiration> ;
-	rdf:rest _:genid6 .
 
-_:genid6 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy#strategy> ;
-	rdf:rest _:genid5 .
+###  https://www.adeel-ansari.io/ontologies/strategy#InternalCustomer
+<https://www.adeel-ansari.io/ontologies/strategy#InternalCustomer> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://www.adeel-ansari.io/ontologies/strategy#Customer> ;
+                                                                   dcterms:description "An internal customer is an employee or organization within an organization that is dependent on an entity within the organization for goods or services."@en ;
+                                                                   rdfs:label "Internal Customer"@en .
 
-_:genid5 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy/DistributionChannel> ;
-	rdf:rest _:genid4 .
 
-_:genid4 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy/Geography> ;
-	rdf:rest _:genid3 .
+###  https://www.adeel-ansari.io/ontologies/strategy#ProductType
+<https://www.adeel-ansari.io/ontologies/strategy#ProductType> rdf:type owl:Class ;
+                                                              dcterms:description "The kinds of products and services offered by the organization."@en ;
+                                                              rdfs:label "Product Type"@en .
 
-_:genid3 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy/ProductType> ;
-	rdf:rest _:genid2 .
 
-_:genid2 a rdf:List ;
-	rdf:first <https://www.businessontology.com/ontologies/strategy/VerticalStageOfProduction> ;
-	rdf:rest rdf:nil .
-# 
-# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
+###  https://www.adeel-ansari.io/ontologies/strategy#VerticalStageOfProduction
+<https://www.adeel-ansari.io/ontologies/strategy#VerticalStageOfProduction> rdf:type owl:Class ;
+                                                                            dcterms:bibliographicCitation "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013."@en ;
+                                                                            dcterms:description "Captures what stage of production the organization will engage in, where along the value chain, and how broadly or narrowly."@en ;
+                                                                            rdfs:label "Vertical Stage of Production"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
