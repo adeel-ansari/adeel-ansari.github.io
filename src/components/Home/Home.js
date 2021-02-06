@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
 
 const Home = () => {
@@ -10,12 +11,14 @@ const Home = () => {
         <div>
             <Jumbotron>
                 <h1>Adeel Ansari</h1>
-                <p>
+                <home-p>
                     Welcome to my page where I explore using knowledge graphs to improve organizational performance.
-            </p>
-                <p>
+                </home-p>
+                <br />
+                <br />
+                <home-p>
                     <Button as={Link} to="/ontologies" variant="primary">Explore Ontologies</Button>
-                </p>
+                </home-p>
             </Jumbotron>
             <br >
             </br>

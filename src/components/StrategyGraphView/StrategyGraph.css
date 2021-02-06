@@ -1,0 +1,83 @@
+
+.svg {
+    fill: rgb(240, 235, 235);
+    border: rgb(66, 92, 106);
+    stroke-width: 1px;
+    stroke-opacity: 0.6;
+
+}
+.link {
+    stroke: rgb(81, 184, 112);;
+    stroke-width: 1px;
+    stroke-opacity: 0.6;
+}
+
+.fixed {
+    fill: #f00;
+}
+
+.class {
+    cursor: move;
+    fill: rgb(58, 154, 206);
+    stroke: rgb(152, 202, 228);
+    stroke-width: 0.5px;
+}
+
+.objectproperty {
+    cursor: move;
+    fill: rgb(152, 202, 228);
+    stroke: #000;
+    stroke-width: 0.5px;
+}
+
+.dataproperty {
+    cursor: move;
+    fill: rgb(147, 196, 111);
+    stroke: #000;
+    stroke-width: 0.5px;
+}
+
+.link-rect {
+    cursor: move;
+    fill: rgb(147, 196, 111);
+    stroke: rgb(147, 196, 111);
+    opacity: 0.6;
+    stroke-width: 0.5px;
+}
+
+.datatype {
+    cursor: move;
+    fill: rgb(221, 206, 34);
+    stroke: rgb(83, 82, 82);
+    stroke-width: 0.5px;
+}
+
+.node {
+    cursor: move;
+    fill: rgb(226, 247, 177);
+    stroke: rgb(66, 92, 106);
+    stroke-width: 0.3px;
+}
+
+.noderect {
+    cursor: move;
+    fill: rgb(147, 196, 111);
+    stroke: #000;
+    stroke-width: 0.5px;
+}
+
+.node-text {
+    stroke: #000;
+    fill: #000;
+    stroke-width: 0.1px;
+}
+
+.link-label {
+    stroke: #000;
+    fill: #000;
+    stroke-width: 0.1px;
+}
+
+.svg {
+    fill: rgb(240, 235, 235)
+}
