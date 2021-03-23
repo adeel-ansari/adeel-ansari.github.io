@@ -65,6 +65,18 @@ dcterms:description rdf:type owl:AnnotationProperty .
                                    dcterms:description "The activities that support the core capabilities."@en .
 
 
+###  https://www.adeel-ansari.github.io/ontologies/strategy#HowToWin.CompetitiveAdvantage
+:HowToWin.CompetitiveAdvantage rdf:type owl:ObjectProperty ;
+                               rdfs:domain :HowToWin ;
+                               rdfs:range :competitive_advantage .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#HowToWin.valueProposition
+:HowToWin.valueProposition rdf:type owl:ObjectProperty ;
+                           rdfs:domain :HowToWin ;
+                           rdfs:range :value_proposition .
+
+
 ###  https://www.adeel-ansari.github.io/ontologies/strategy#Organization.activitySystem
 :Organization.activitySystem rdf:type owl:ObjectProperty ;
                              rdfs:domain <http://www.w3.org/ns/org#Organization> ;
@@ -140,6 +152,7 @@ dcterms:description rdf:type owl:AnnotationProperty .
 
 ###  https://www.adeel-ansari.io/ontologies/strategy#Strategy.status
 <https://www.adeel-ansari.io/ontologies/strategy#Strategy.status> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain :strategy ;
                                                                   dcterms:description "Whether the strategy is in active use, draft, or no longer in use."@en .
 
 
