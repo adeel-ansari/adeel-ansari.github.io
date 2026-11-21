@@ -5,9 +5,6 @@
 /.pnp
 .pnp.js
 
-# code that we don't want to make public yet
-/azure_functions
-
 # testing
 /coverage
 
