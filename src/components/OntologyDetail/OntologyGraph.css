@@ -1,0 +1,190 @@
+/* ── Layout ──────────────────────────────────────────────────── */
+
+.graph-wrap {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.graph {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.graph-hint {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+/* ── SVG ─────────────────────────────────────────────────────── */
+
+.graph svg {
+    width: 100%;
+    height: auto;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+/* ── Links ───────────────────────────────────────────────────── */
+
+.link-line {
+    stroke: #cfc5b8;
+    stroke-width: 1.2px;
+}
+
+.link.subclass .link-line {
+    stroke-dasharray: 4 3;
+    stroke: #d9cfc4;
+}
+
+.arrow-head {
+    fill: #cfc5b8;
+}
+
+.link-label {
+    font: 8px sans-serif;
+    fill: var(--text-muted);
+    pointer-events: none;
+}
+
+/* ── Nodes ───────────────────────────────────────────────────── */
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    stroke: var(--surface);
+    stroke-width: 2px;
+    transition: stroke 0.15s, stroke-width 0.15s, filter 0.15s;
+}
+
+.node:hover circle {
+    stroke: var(--accent);
+    stroke-width: 2.5px;
+}
+
+.node.selected-node circle {
+    stroke: var(--accent);
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 5px rgba(192, 122, 61, 0.45));
+}
+
+.node-text {
+    font: 11px sans-serif;
+    fill: var(--text);
+    paint-order: stroke;
+    stroke: var(--surface);
+    stroke-width: 3px;
+    pointer-events: none;
+}
+
+/* ── Legend ──────────────────────────────────────────────────── */
+
+.legend text {
+    font: 11px sans-serif;
+    fill: var(--text-muted);
+}
+
+/* ── Side panel ──────────────────────────────────────────────── */
+
+.node-panel {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    position: relative;
+}
+
+.node-panel-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+.node-panel-close:hover {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.node-panel-group {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.node-panel-title {
+    font-size: 1.05rem;
+    margin: 0.3rem 0 0.2rem;
+}
+
+.node-panel-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.node-panel-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.node-panel-props h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.node-panel-props table {
+    width: 100%;
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+.node-panel-props th {
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.4rem;
+    border-bottom: 1px solid var(--border);
+    background: none;
+}
+
+.node-panel-props td {
+    padding: 0.3rem 0.4rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-muted);
+}
+
+.node-panel-props tr:last-child td {
+    border-bottom: none;
+}
+
+.node-panel-props code {
+    font-size: 0.78rem;
+    background: none;
+    padding: 0;
+    color: var(--primary);
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import strategy from '../../ontology';
+import { REGISTRY } from '../../ontology/registry';
 import './OntologyHome.css';
 
 const OntologyHome = () => (
@@ -16,22 +16,20 @@ const OntologyHome = () => (
         </div>
 
         <div className="onto-grid">
-            <div className="onto-card">
-                <div className="onto-card-tag">Strategy</div>
-                <h2 className="onto-card-title">Strategic Choice Cascade</h2>
-                <p className="onto-card-desc">
-                    Based on <em>Playing to Win</em> by A.G. Lafley and Roger L. Martin.
-                    Models the five strategic choices — winning aspiration, where to play,
-                    how to win, must-have capabilities, and enabling management systems —
-                    and the links between them.
-                </p>
-                <div className="onto-card-meta">
-                    {strategy.classes.length} classes &middot; {strategy.properties.length} properties
+            {REGISTRY.map((entry) => (
+                <div key={entry.slug} className="onto-card">
+                    <div className="onto-card-tag">{entry.tag}</div>
+                    <h2 className="onto-card-title">{entry.title}</h2>
+                    <p className="onto-card-desc">{entry.description}</p>
+                    <div className="onto-card-meta">
+                        {entry.module.default.classes.length} classes &middot;{' '}
+                        {entry.module.default.properties.length} properties
+                    </div>
+                    <Link to={`/ontologies/${entry.slug}`} className="onto-card-link">
+                        Explore →
+                    </Link>
                 </div>
-                <Link to="/ontologyDetail" className="onto-card-link">
-                    Explore →
-                </Link>
-            </div>
+            ))}
         </div>
     </div>
 );

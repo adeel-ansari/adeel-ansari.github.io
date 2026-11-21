@@ -1,16 +1,20 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import strategy, { classById, GROUP_COLORS } from '../../ontology';
+import defaultStrategy, { classById as defaultClassById, GROUP_COLORS as defaultGroupColors } from '../../ontology';
 import './Cascade.css';
 
-const ExampleView = () => {
-    const { example, cascade } = strategy;
+const ExampleView = ({ ontologyModule }) => {
+    const data       = ontologyModule ? ontologyModule.default   : defaultStrategy;
+    const classById  = ontologyModule ? ontologyModule.classById  : defaultClassById;
+    const GROUP_COLORS = ontologyModule ? ontologyModule.GROUP_COLORS : defaultGroupColors;
+
+    const { example, cascade } = data;
     return (
         <div className="cascade">
             <h4>{example.title}</h4>
             <p className="text-muted">{example.source}</p>
             {example.choices.map((choice) => {
-                const step = cascade.find((s) => s.step === choice.step);
+                const step  = cascade.find((s) => s.step === choice.step);
                 const color = GROUP_COLORS[classById[step.classId].group];
                 return (
                     <div key={choice.step} className="cascade-step">
@@ -23,7 +27,9 @@ const ExampleView = () => {
                                 </ul>
                             </Card.Body>
                         </Card>
-                        {choice.step < cascade.length && <div className="cascade-arrow" aria-hidden="true">&#8595;</div>}
+                        {choice.step < cascade.length && (
+                            <div className="cascade-arrow" aria-hidden="true">↓</div>
+                        )}
                     </div>
                 );
             })}

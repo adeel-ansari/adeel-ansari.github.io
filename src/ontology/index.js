@@ -12,6 +12,11 @@ export const GROUP_COLORS = {
 
 export const GROUP_ORDER = Object.keys(GROUP_COLORS);
 
+export const LAYOUT = {
+    cascadeGroups: ['Strategy', 'Winning Aspiration', 'Where to Play', 'How to Win', 'Capabilities', 'Management Systems'],
+    supportingGroups: ['Actors'],
+};
+
 export const classById = Object.fromEntries(strategy.classes.map((c) => [c.id, c]));
 
 export const propertiesFor = (classId) =>

@@ -1,0 +1,39 @@
+.grid-group {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    border-bottom: 3px solid;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+h5 code {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: none;
+    padding: 0;
+}
+
+table {
+    font-size: 0.875rem !important;
+}
+
+table th {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+}
+
+table td {
+    border-color: var(--border) !important;
+    vertical-align: middle;
+}
+
+table tbody tr:hover {
+    background: #f2ece4 !important;
+}

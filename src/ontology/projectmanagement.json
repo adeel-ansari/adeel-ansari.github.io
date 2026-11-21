@@ -1,0 +1,161 @@
+{
+  "iri": "https://adeel-ansari.github.io/ontologies/project-management",
+  "prefix": "pm",
+  "title": "Agile Project Management Ontology",
+  "version": "1.0.0",
+  "description": "An ontology of core agile project management concepts: how work is organised from high-level themes and epics down to individual stories and tasks, and how delivery cadence is managed through sprints and backlogs.",
+  "citation": "Cohn, M. User Stories Applied: For Agile Software Development. Addison-Wesley, 2004. / Schwaber, K. and Sutherland, J. The Scrum Guide. scrum.org, 2020.",
+  "hierarchy": [
+    {
+      "step": 1,
+      "classId": "Theme",
+      "title": "Theme",
+      "question": "What strategic area of investment are we committing to?",
+      "summary": "Themes are the highest-level groupings of work. They represent a significant area of product investment aligned to a business goal, and contain one or more epics."
+    },
+    {
+      "step": 2,
+      "classId": "Epic",
+      "title": "Epic",
+      "question": "What significant capability will we build?",
+      "summary": "An epic captures a large body of work representing a significant product capability. It is too large to deliver in a single sprint and is broken down into user stories once requirements become clearer."
+    },
+    {
+      "step": 3,
+      "classId": "Story",
+      "title": "User Story",
+      "question": "What specific user need will we address?",
+      "summary": "A user story is a short description of a desired feature told from the perspective of a user: 'As a [persona], I want [goal] so that [benefit].' Stories are the primary unit of delivery in a sprint."
+    },
+    {
+      "step": 4,
+      "classId": "Task",
+      "title": "Task",
+      "question": "What technical work is needed to implement the story?",
+      "summary": "Tasks are the smallest unit of work. They break a user story into concrete technical or non-technical pieces of work, estimated in hours, assigned to individual team members during sprint planning."
+    }
+  ],
+  "classes": [
+    {
+      "id": "Theme",
+      "label": "Theme",
+      "group": "Vision",
+      "description": "A high-level grouping of related epics that together serve a significant business or product objective. Themes help the team and stakeholders understand the strategic direction of the backlog without getting into the detail of individual stories."
+    },
+    {
+      "id": "Release",
+      "label": "Release",
+      "group": "Vision",
+      "description": "A versioned deployment of product increments delivered to users. Releases group completed epics and stories into a coherent unit of value. Release planning aligns the team on what will be delivered by when."
+    },
+    {
+      "id": "Epic",
+      "label": "Epic",
+      "group": "Feature",
+      "description": "A large body of work that represents a significant product capability or business requirement. Epics are too broad to deliver in a single sprint and are progressively refined into user stories as understanding grows."
+    },
+    {
+      "id": "Story",
+      "label": "User Story",
+      "group": "Feature",
+      "description": "A short, simple description of a feature or capability told from the perspective of the user who wants it. User stories follow the form 'As a [persona], I want [goal] so that [benefit].' They are the primary unit of work planned and delivered within a sprint."
+    },
+    {
+      "id": "Sprint",
+      "label": "Sprint",
+      "group": "Execution",
+      "description": "A fixed-length iteration, typically one to four weeks, during which the team selects a set of stories from the backlog and commits to achieving a sprint goal. Each sprint ends with a potentially shippable product increment."
+    },
+    {
+      "id": "Task",
+      "label": "Task",
+      "group": "Execution",
+      "description": "A specific piece of technical or non-technical work required to implement a user story. Tasks are estimated in hours, owned by individual team members, and tracked on the sprint board. A story is not done until all its tasks are done."
+    },
+    {
+      "id": "Backlog",
+      "label": "Backlog",
+      "group": "Execution",
+      "description": "An ordered, prioritised list of work items. The product backlog captures all known future work in priority order. The sprint backlog contains the stories the team has committed to for the current sprint, plus the tasks needed to deliver them."
+    },
+    {
+      "id": "AcceptanceCriteria",
+      "label": "Acceptance Criteria",
+      "group": "Quality",
+      "description": "A set of conditions a user story must satisfy before it is considered complete and accepted by the product owner. Acceptance criteria make the requirements explicit and testable, removing ambiguity about what 'done' means for a given story."
+    },
+    {
+      "id": "DefinitionOfDone",
+      "label": "Definition of Done",
+      "group": "Quality",
+      "description": "A shared checklist of conditions that every work item must meet before it can be called complete, such as code reviewed, unit tested, integrated, and deployed to staging. The definition of done is owned by the team and applied consistently across all stories."
+    },
+    {
+      "id": "StoryPoint",
+      "label": "Story Point",
+      "group": "Quality",
+      "description": "A relative unit of effort used to estimate the work required to implement a user story. Story points account for complexity, volume and uncertainty as a whole, rather than estimating in hours. They enable velocity tracking across sprints."
+    },
+    {
+      "id": "Persona",
+      "label": "Persona",
+      "group": "Team",
+      "description": "A fictional user archetype representing a real user type, their goals, behaviours and pain points. Personas are used in the '[As a]' part of user stories to ground requirements in real user needs and prevent feature development driven by internal assumptions."
+    },
+    {
+      "id": "ProductOwner",
+      "label": "Product Owner",
+      "group": "Team",
+      "description": "The team member responsible for maximising the value of the product by defining and prioritising the product backlog. The product owner represents the business and stakeholders, writes or approves user stories, and accepts completed work at the end of each sprint."
+    },
+    {
+      "id": "ScrumMaster",
+      "label": "Scrum Master",
+      "group": "Team",
+      "description": "The servant-leader responsible for helping the team follow agile principles, removing impediments, and facilitating agile ceremonies (sprint planning, daily stand-up, retrospective, review). The scrum master does not manage the team but coaches them toward self-organisation."
+    }
+  ],
+  "properties": [
+    { "id": "Theme.containsEpic",       "kind": "object",   "domain": "Theme",             "range": "Epic",               "description": "The epics that belong to this theme." },
+    { "id": "Theme.targetedRelease",    "kind": "object",   "domain": "Theme",             "range": "Release",            "description": "The release this theme is intended to ship in." },
+
+    { "id": "Release.includesEpic",     "kind": "object",   "domain": "Release",           "range": "Epic",               "description": "The epics included in this release." },
+
+    { "id": "Epic.partOfTheme",         "kind": "object",   "domain": "Epic",              "range": "Theme",              "description": "The theme this epic belongs to." },
+    { "id": "Epic.targetedRelease",     "kind": "object",   "domain": "Epic",              "range": "Release",            "description": "The release this epic is planned for." },
+    { "id": "Epic.decomposesTo",        "kind": "object",   "domain": "Epic",              "range": "Story",              "description": "The user stories this epic breaks down into as it is refined." },
+    { "id": "Epic.title",               "kind": "datatype", "domain": "Epic",              "range": "xsd:string",         "description": "A short, descriptive title for the epic." },
+
+    { "id": "Story.partOfEpic",         "kind": "object",   "domain": "Story",             "range": "Epic",               "description": "The epic this story contributes to." },
+    { "id": "Story.hasAcceptanceCriteria", "kind": "object","domain": "Story",             "range": "AcceptanceCriteria", "description": "The acceptance criteria that define when this story is done." },
+    { "id": "Story.pointEstimate",      "kind": "object",   "domain": "Story",             "range": "StoryPoint",         "description": "The story point estimate for this story." },
+    { "id": "Story.writtenFor",         "kind": "object",   "domain": "Story",             "range": "Persona",            "description": "The persona whose need this story addresses (the 'As a' in the story template)." },
+    { "id": "Story.scheduledIn",        "kind": "object",   "domain": "Story",             "range": "Sprint",             "description": "The sprint this story is planned for." },
+    { "id": "Story.storyText",          "kind": "datatype", "domain": "Story",             "range": "xsd:string",         "description": "The full story text: 'As a [persona], I want [goal] so that [benefit]'." },
+
+    { "id": "Task.implements",          "kind": "object",   "domain": "Task",              "range": "Story",              "description": "The user story this task contributes to implementing." },
+    { "id": "Task.estimatedHours",      "kind": "datatype", "domain": "Task",              "range": "xsd:decimal",        "description": "Estimated effort for this task in hours." },
+    { "id": "Task.remainingHours",      "kind": "datatype", "domain": "Task",              "range": "xsd:decimal",        "description": "Remaining effort for this task in hours, updated daily during the sprint." },
+
+    { "id": "Sprint.contains",          "kind": "object",   "domain": "Sprint",            "range": "Story",              "description": "The user stories the team has committed to for this sprint." },
+    { "id": "Sprint.drawsFrom",         "kind": "object",   "domain": "Sprint",            "range": "Backlog",            "description": "The backlog from which stories are pulled during sprint planning." },
+    { "id": "Sprint.goal",              "kind": "datatype", "domain": "Sprint",            "range": "xsd:string",         "description": "A short statement of what the team intends to achieve this sprint." },
+    { "id": "Sprint.lengthDays",        "kind": "datatype", "domain": "Sprint",            "range": "xsd:integer",        "description": "The length of the sprint in days." },
+
+    { "id": "Backlog.contains",         "kind": "object",   "domain": "Backlog",           "range": "Epic",               "description": "The epics and stories in this backlog, in priority order." },
+    { "id": "Backlog.ownedBy",          "kind": "object",   "domain": "Backlog",           "range": "ProductOwner",       "description": "The product owner responsible for prioritising this backlog." },
+
+    { "id": "AcceptanceCriteria.criterion", "kind": "datatype", "domain": "AcceptanceCriteria", "range": "xsd:string",   "description": "A single testable condition the story must satisfy." },
+
+    { "id": "StoryPoint.value",         "kind": "datatype", "domain": "StoryPoint",        "range": "xsd:integer",        "description": "The point value assigned to the story (e.g. 1, 2, 3, 5, 8, 13 on a Fibonacci scale)." },
+
+    { "id": "ProductOwner.owns",        "kind": "object",   "domain": "ProductOwner",      "range": "Backlog",            "description": "The backlog this product owner is responsible for." },
+    { "id": "ProductOwner.accepts",     "kind": "object",   "domain": "ProductOwner",      "range": "Story",              "description": "Stories accepted by this product owner as meeting the acceptance criteria." },
+
+    { "id": "ScrumMaster.facilitates",  "kind": "object",   "domain": "ScrumMaster",       "range": "Sprint",             "description": "The sprints this scrum master facilitates." },
+
+    { "id": "Persona.name",             "kind": "datatype", "domain": "Persona",           "range": "xsd:string",         "description": "The name of the persona (e.g. 'Sarah the Shopper')." },
+    { "id": "Persona.goal",             "kind": "datatype", "domain": "Persona",           "range": "xsd:string",         "description": "What this persona is trying to achieve." },
+    { "id": "Persona.painPoint",        "kind": "datatype", "domain": "Persona",           "range": "xsd:string",         "description": "A key frustration or problem this persona experiences." }
+  ]
+}

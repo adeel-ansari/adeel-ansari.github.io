@@ -3,12 +3,12 @@ import React from 'react';
 import './App.css';
 import NavigationBar from './components/Navigation/NavigationBar';
 import 'bootstrap/dist/css/bootstrap.css';
-import Tabview from './components/Tabview/Tabview';
-import OntologyHome from './components/Ontology/OntologyHome';
+import OntologyHome      from './components/Ontology/OntologyHome';
+import OntologyDetailPage from './components/OntologyDetail/OntologyDetailPage';
 import Home from './components/Home/Home';
 // HashRouter keeps routes working on GitHub Pages, which has no server-side
 // fallback for client routes (a refresh or direct link to /ontologies 404s).
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 
 function App() {
@@ -17,20 +17,18 @@ function App() {
       <header>
         <NavigationBar />
       </header>
-      <br>
-      </br>
-      <React.Fragment>
-        <Layout>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/ontologies' element={<OntologyHome />} />
-            <Route path='/ontologyDetail' element={<Tabview />} />
-          </Routes>
-        </Layout>
-      </React.Fragment>
+      <br />
+      <Layout>
+        <Routes>
+          <Route path='/'                      element={<Home />} />
+          <Route path='/ontologies'            element={<OntologyHome />} />
+          <Route path='/ontologies/:slug'      element={<OntologyDetailPage />} />
+          {/* Legacy redirect so any saved links still work */}
+          <Route path='/ontologyDetail'        element={<Navigate to="/ontologies/strategy" replace />} />
+        </Routes>
+      </Layout>
       <br />
     </HashRouter>
-
   );
 }
 
