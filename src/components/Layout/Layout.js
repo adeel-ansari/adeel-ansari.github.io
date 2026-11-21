@@ -1,10 +1,10 @@
-import { Container } from 'react-bootstrap';
 import React from 'react';
 import './Layout.css';
 
 export const Layout = (props) => (
-    <Container fluid className="Container">
+    <div className="site-layout">
         {props.children}
-    </Container>
-)
+    </div>
+);
+
 export default Layout;

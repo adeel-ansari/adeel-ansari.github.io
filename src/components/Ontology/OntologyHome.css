@@ -1,0 +1,78 @@
+.onto-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+
+.onto-header h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0.75rem;
+}
+
+.onto-intro {
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.onto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.onto-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.15s;
+}
+
+.onto-card:hover {
+    box-shadow: 0 2px 12px rgba(44, 31, 20, 0.08);
+}
+
+.onto-card-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.onto-card-title {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.onto-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+    margin: 0;
+}
+
+.onto-card-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.onto-card-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+    margin-top: 0.25rem;
+}
+
+.onto-card-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+}

@@ -1,13 +1,13 @@
 import strategy from './strategy.json';
 
 export const GROUP_COLORS = {
-    'Strategy': '#343a40',
-    'Winning Aspiration': '#2f6fb0',
-    'Where to Play': '#2f9e8f',
-    'How to Win': '#d08a1e',
-    'Capabilities': '#8a4fbf',
-    'Management Systems': '#c2414b',
-    'Actors': '#6c757d',
+    'Strategy':            '#5c3d1e',
+    'Winning Aspiration':  '#c07a3d',
+    'Where to Play':       '#6b8c6e',
+    'How to Win':          '#7a8fa8',
+    'Capabilities':        '#9c6b5e',
+    'Management Systems':  '#8b7355',
+    'Actors':              '#9e9087',
 };
 
 export const GROUP_ORDER = Object.keys(GROUP_COLORS);

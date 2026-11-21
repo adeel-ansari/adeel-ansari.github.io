@@ -1,28 +1,35 @@
+.graph p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
 .graph svg {
-   width: 100%;
-   height: auto;
-   background-color: #fafafa;
-   border: 1px solid #dee2e6;
-   border-radius: 4px;
+    width: 100%;
+    height: auto;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .link-line {
-   stroke: #9aa5b1;
-   stroke-width: 1.2px;
+    stroke: #c8bfb4;
+    stroke-width: 1.2px;
 }
 
 .link.subclass .link-line {
-   stroke-dasharray: 4 3;
+    stroke-dasharray: 4 3;
+    stroke: #d9cfc4;
 }
 
 .arrow-head {
-   fill: #9aa5b1;
+    fill: #c8bfb4;
 }
 
 .link-label {
-   font: 9px sans-serif;
-   fill: #6c757d;
-   pointer-events: none;
+    font: 8px sans-serif;
+    fill: var(--text-muted);
+    pointer-events: none;
 }
 
 .node {
@@ -30,19 +37,19 @@
 }
 
 .node circle {
-   stroke: #fff;
-   stroke-width: 1.5px;
+    stroke: var(--surface);
+    stroke-width: 2px;
 }
 
 .node-text {
-   font: 12px sans-serif;
-   fill: #212529;
-   paint-order: stroke;
-   stroke: #fafafa;
-   stroke-width: 3px;
+    font: 11px sans-serif;
+    fill: var(--text);
+    paint-order: stroke;
+    stroke: var(--surface);
+    stroke-width: 3px;
 }
 
 .legend text {
-   font: 12px sans-serif;
-   fill: #212529;
+    font: 11px sans-serif;
+    fill: var(--text-muted);
 }

@@ -1,38 +1,30 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
+import { Nav, Navbar, Container } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import './NavigationBar.css';
 
 const NavigationBar = () => {
+    const { hash } = useLocation();
+    const active = (path) => hash === `#${path}` || (path === '/' && hash === '');
 
     return (
-        <Navbar bg="light" expand="lg">
-            {/* <Navbar.Brand href="#home">adeelansari.io</Navbar.Brand> */}
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Item as="li">
-                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as="li">
-                        <Nav.Link as={Link} to='/ontologies'>Ontologies</Nav.Link>
-                    </Nav.Item>
-                    {/* <Nav.Link href="#about">About</Nav.Link> */}
-                    {/* <Nav.Link href="#ontologies">Ontologies</Nav.Link> */}
-                    {/* <Nav.Link href="#demo">Demo</Nav.Link> */}
-                    {/* <NavDropdown title="Ontologies" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#ontology/strategicchoicecascade">Strategic Choice Cascade</NavDropdown.Item>
-                        <NavDropdown.Item href="#ontology/businessmodel">Business Model</NavDropdown.Item>
-                        <NavDropdown.Item href="#ontology/anotherontology">Another Ontology</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#ontology/anotherlink">Separated link</NavDropdown.Item>
-                    </NavDropdown> */}
-                </Nav>
-                {/* <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="primary">Search</Button>
-                </Form> */}
-            </Navbar.Collapse>
+        <Navbar expand="lg" className="site-nav">
+            <Container fluid className="site-nav-inner">
+                <Navbar.Brand as={Link} to="/" className="site-nav-brand">
+                    Adeel Ansari
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="main-nav" className="site-nav-toggle" />
+                <Navbar.Collapse id="main-nav">
+                    <Nav className="ms-auto">
+                        <Nav.Link as={Link} to="/" className={active('/') ? 'active' : ''}>
+                            Home
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/ontologies" className={active('/ontologies') ? 'active' : ''}>
+                            Ontologies
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
         </Navbar>
     );
 };
