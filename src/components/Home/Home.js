@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <div>
-            <Jumbotron>
+            <div className="p-5 mb-4 bg-light rounded-3">
                 <h1>Adeel Ansari</h1>
                 <home-p>
                     Welcome to my page where I explore using knowledge graphs to improve organizational performance.
@@ -19,7 +19,7 @@ const Home = () => {
                 <home-p>
                     <Button as={Link} to="/ontologies" variant="primary">Explore Ontologies</Button>
                 </home-p>
-            </Jumbotron>
+            </div>
             <br >
             </br>
             {/* <Container>

@@ -9,7 +9,7 @@ import OntologyHome from './components/Ontology/OntologyHome';
 import Home from './components/Home/Home';
 // HashRouter keeps routes working on GitHub Pages, which has no server-side
 // fallback for client routes (a refresh or direct link to /ontologies 404s).
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Layout } from './components/Layout/Layout';
 
 function App() {
@@ -25,11 +25,11 @@ function App() {
       </br>
       <React.Fragment>
         <Layout>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/ontologies' component={OntologyHome} />
-            <Route path='/ontologyDetail' component={Tabview} />
-          </Switch>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/ontologies' element={<OntologyHome />} />
+            <Route path='/ontologyDetail' element={<Tabview />} />
+          </Routes>
         </Layout>
       </React.Fragment>
       <br />
