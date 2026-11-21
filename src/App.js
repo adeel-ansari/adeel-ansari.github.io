@@ -7,7 +7,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Tabview from './components/Tabview/Tabview';
 import OntologyHome from './components/Ontology/OntologyHome';
 import Home from './components/Home/Home';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// HashRouter keeps routes working on GitHub Pages, which has no server-side
+// fallback for client routes (a refresh or direct link to /ontologies 404s).
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { Layout } from './components/Layout/Layout';
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
   const [data] = useState([]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <header>
         <NavigationBar />
       </header>
@@ -31,7 +33,7 @@ function App() {
         </Layout>
       </React.Fragment>
       <br />
-    </BrowserRouter>
+    </HashRouter>
 
   );
 }

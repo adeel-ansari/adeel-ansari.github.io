@@ -1,3 +1,23 @@
+# adeel-ansari.github.io
+
+A React site that publishes ontologies for modelling organizational strategy.
+
+## Strategy ontology
+
+The strategy ontology models Roger Martin's strategic choice cascade from *Playing to Win*
+(winning aspiration, where to play, how to win, must-have capabilities, enabling management systems).
+
+- `src/ontology/strategy.json` is the single source of truth used by the site.
+- `npm run build:ontology` regenerates the Turtle/OWL file in `public/ontologies/strategy.ttl`
+  (downloadable from the site) and `artifacts/ontologies/strategy.ttl`. It also runs before `npm run deploy`.
+
+## Building and deploying
+
+This project uses `react-scripts` 4, which needs Node 16 (newer Node versions fail with
+`ERR_PACKAGE_PATH_NOT_EXPORTED`). Install with `npm ci --ignore-scripts` (the
+`azure-functions-core-tools` post-install download is not needed for the site), then run
+`npm run deploy` under Node 16 to build and publish to the `gh-pages` branch.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

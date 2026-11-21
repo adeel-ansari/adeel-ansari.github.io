@@ -1,0 +1,39 @@
+.cascade {
+    max-width: 820px;
+    text-align: left;
+}
+
+.cascade-card {
+    border-left-width: 6px;
+    border-left-style: solid;
+}
+
+.cascade-card .card-body {
+    position: relative;
+    padding-left: 4.25rem;
+}
+
+.cascade-number {
+    position: absolute;
+    left: 1rem;
+    top: 1.15rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cascade-arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    color: #adb5bd;
+}
+
+.example-list {
+    margin-bottom: 0;
+}

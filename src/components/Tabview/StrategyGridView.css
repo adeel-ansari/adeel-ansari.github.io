@@ -5,6 +5,13 @@ h3 {
 p {
     text-align: left;
 }
+
 Table {
     text-align: left;
+}
+
+.grid-group {
+    border-bottom: 3px solid;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }

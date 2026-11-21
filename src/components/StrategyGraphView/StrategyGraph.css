@@ -1,83 +1,48 @@
-
-.svg {
-    fill: rgb(240, 235, 235);
-    border: rgb(66, 92, 106);
-    stroke-width: 1px;
-    stroke-opacity: 0.6;
-
-}
-.link {
-    stroke: rgb(81, 184, 112);;
-    stroke-width: 1px;
-    stroke-opacity: 0.6;
+.graph svg {
+   width: 100%;
+   height: auto;
+   background-color: #fafafa;
+   border: 1px solid #dee2e6;
+   border-radius: 4px;
 }
 
-.fixed {
-    fill: #f00;
+.link-line {
+   stroke: #9aa5b1;
+   stroke-width: 1.2px;
 }
 
-.class {
-    cursor: move;
-    fill: rgb(58, 154, 206);
-    stroke: rgb(152, 202, 228);
-    stroke-width: 0.5px;
+.link.subclass .link-line {
+   stroke-dasharray: 4 3;
 }
 
-.objectproperty {
-    cursor: move;
-    fill: rgb(152, 202, 228);
-    stroke: #000;
-    stroke-width: 0.5px;
+.arrow-head {
+   fill: #9aa5b1;
 }
 
-.dataproperty {
-    cursor: move;
-    fill: rgb(147, 196, 111);
-    stroke: #000;
-    stroke-width: 0.5px;
-}
-
-.link-rect {
-    cursor: move;
-    fill: rgb(147, 196, 111);
-    stroke: rgb(147, 196, 111);
-    opacity: 0.6;
-    stroke-width: 0.5px;
-}
-
-.datatype {
-    cursor: move;
-    fill: rgb(221, 206, 34);
-    stroke: rgb(83, 82, 82);
-    stroke-width: 0.5px;
+.link-label {
+   font: 9px sans-serif;
+   fill: #6c757d;
+   pointer-events: none;
 }
 
 .node {
     cursor: move;
-    fill: rgb(226, 247, 177);
-    stroke: rgb(66, 92, 106);
-    stroke-width: 0.3px;
 }
 
-.noderect {
-    cursor: move;
-    fill: rgb(147, 196, 111);
-    stroke: #000;
-    stroke-width: 0.5px;
+.node circle {
+   stroke: #fff;
+   stroke-width: 1.5px;
 }
 
 .node-text {
-    stroke: #000;
-    fill: #000;
-    stroke-width: 0.1px;
+   font: 12px sans-serif;
+   fill: #212529;
+   paint-order: stroke;
+   stroke: #fafafa;
+   stroke-width: 3px;
 }
 
-.link-label {
-    stroke: #000;
-    fill: #000;
-    stroke-width: 0.1px;
-}
-
-.svg {
-    fill: rgb(240, 235, 235)
+.legend text {
+   font: 12px sans-serif;
+   fill: #212529;
 }

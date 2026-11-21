@@ -1,0 +1,292 @@
+{
+  "iri": "https://adeel-ansari.github.io/ontologies/strategy",
+  "prefix": "strat",
+  "title": "Strategy Ontology (Playing to Win)",
+  "version": "1.0.0",
+  "description": "An ontology of Roger Martin's strategic choice cascade from 'Playing to Win'. A strategy is modelled as five linked choices (winning aspiration, where to play, how to win, must-have capabilities and enabling management systems) so that an organization's activities, measures and resources can be traced back to the choices they support.",
+  "citation": "Lafley, A. G., and Roger L. Martin. Playing to Win: How Strategy Really Works. Harvard Business Review Press, 2013.",
+  "cascade": [
+    {
+      "step": 1,
+      "classId": "WinningAspiration",
+      "title": "Winning Aspiration",
+      "question": "What is our winning aspiration?",
+      "summary": "The purpose of the enterprise and its motivating aspiration: what winning looks like, with whom (consumers and customers) and against whom (the best competitors)."
+    },
+    {
+      "step": 2,
+      "classId": "WhereToPlay",
+      "title": "Where to Play",
+      "question": "Where will we play?",
+      "summary": "The playing field where the aspiration can be achieved, chosen across geography, product type, consumer segment, distribution channel and vertical stage of production. It is just as much a choice of where not to play."
+    },
+    {
+      "step": 3,
+      "classId": "HowToWin",
+      "title": "How to Win",
+      "question": "How will we win where we have chosen to play?",
+      "summary": "The way the organization will win on its chosen playing field, through cost leadership or differentiation, expressed as a value proposition that creates a sustainable competitive advantage."
+    },
+    {
+      "step": 4,
+      "classId": "CoreCapability",
+      "title": "Must-Have Capabilities",
+      "question": "What capabilities must be in place to win?",
+      "summary": "The set and configuration of capabilities required to win in the chosen way. Capabilities reinforce one another and form an activity system that is hard for competitors to copy."
+    },
+    {
+      "step": 5,
+      "classId": "ManagementSystem",
+      "title": "Enabling Management Systems",
+      "question": "What management systems are required?",
+      "summary": "The systems, structures and measures that build and sustain the capabilities and keep the choices alive: strategy dialogues, resource allocation, talent development and measures of success."
+    }
+  ],
+  "classes": [
+    {
+      "id": "Strategy",
+      "label": "Strategy",
+      "group": "Strategy",
+      "description": "In 'Playing to Win', strategy is defined as an integrated set of choices that uniquely positions the firm in its industry so as to create sustainable advantage and superior value relative to the competition. A strategy is made of the five cascade choices, and strategies nest: the choices at one level of the organization set the context for the level below."
+    },
+    {
+      "id": "WinningAspiration",
+      "label": "Winning Aspiration",
+      "group": "Winning Aspiration",
+      "description": "The purpose of the organization and its motivating aspiration. It defines what winning means, who the organization is winning with (its most important consumers and customers) and who it is winning against (the very best competitors)."
+    },
+    {
+      "id": "WhereToPlay",
+      "label": "Where to Play",
+      "group": "Where to Play",
+      "description": "The playing field on which the organization will achieve its aspiration. It is set by choices on five dimensions: geography, product type, consumer segment, distribution channel and vertical stage of production."
+    },
+    {
+      "id": "Geography",
+      "label": "Geography",
+      "group": "Where to Play",
+      "description": "The countries or regions in which the organization will compete."
+    },
+    {
+      "id": "ProductType",
+      "label": "Product Type",
+      "group": "Where to Play",
+      "description": "The kinds of products and services offered by the organization."
+    },
+    {
+      "id": "ConsumerSegment",
+      "label": "Consumer Segment",
+      "group": "Where to Play",
+      "description": "A group of consumers the organization chooses to serve, defined by shared characteristics, the price tier they buy in and the needs they want met. Segmenting consumers lets the organization understand them better and target each group through product development, marketing and pricing."
+    },
+    {
+      "id": "CustomerSegment",
+      "label": "Customer Segment",
+      "group": "Where to Play",
+      "description": "A group of customers (the people or organizations who buy, such as retailers or distributors) the organization will target through pricing, product features and marketing. The customer is not always the consumer, so this segmentation focuses on who purchases the product or service."
+    },
+    {
+      "id": "DistributionChannel",
+      "label": "Distribution Channel",
+      "group": "Where to Play",
+      "description": "A route through which the organization reaches its customers and consumers, such as mass retail, specialty retail, direct-to-consumer or e-commerce."
+    },
+    {
+      "id": "VerticalStageOfProduction",
+      "label": "Vertical Stage of Production",
+      "group": "Where to Play",
+      "description": "The stages of production the organization will engage in, where along the value chain, and how broadly or narrowly."
+    },
+    {
+      "id": "HowToWin",
+      "label": "How to Win",
+      "group": "How to Win",
+      "description": "The way the organization will win on its chosen playing field. There are two generic ways to win: cost leadership and differentiation. Either way, the goal is a sustainably greater margin between revenue and cost than competitors can match. Where-to-play and how-to-win choices must be made together and reinforce each other."
+    },
+    {
+      "id": "CompetitiveAdvantage",
+      "label": "Competitive Advantage",
+      "group": "How to Win",
+      "description": "One or more factors that allow an organization to deliver superior value to consumers and customers, or deliver equal value at a lower cost, compared with its competitors."
+    },
+    {
+      "id": "CostLeadership",
+      "label": "Cost Leadership",
+      "group": "How to Win",
+      "subClassOf": "CompetitiveAdvantage",
+      "description": "Winning by having a lower cost structure than competitors, so that the organization earns a higher margin at the same price or can price lower while remaining profitable."
+    },
+    {
+      "id": "Differentiation",
+      "label": "Differentiation",
+      "group": "How to Win",
+      "subClassOf": "CompetitiveAdvantage",
+      "description": "Winning by offering products or services that consumers and customers perceive as uniquely valuable, allowing the organization to command a higher price than competitors."
+    },
+    {
+      "id": "ValueProposition",
+      "label": "Value Proposition",
+      "group": "How to Win",
+      "description": "The value an organization promises to deliver to its consumers and customers if they buy its products or services: the reason they should choose it over the alternatives."
+    },
+    {
+      "id": "CoreCapability",
+      "label": "Must-Have Capability",
+      "group": "Capabilities",
+      "description": "A core capability the organization must have to deliver on its where-to-play and how-to-win choices. Together the capabilities form a reinforcing activity system that is distinctive from competitors."
+    },
+    {
+      "id": "ActivitySystem",
+      "label": "Activity System",
+      "group": "Capabilities",
+      "description": "The organization's core capabilities operating as a system of reinforcing activities. Because this system is uniquely different from competitors, it is essentially the organization's competitive advantage. It is composed of the core capabilities, the relationships between them and the activities that support them."
+    },
+    {
+      "id": "Activity",
+      "label": "Activity",
+      "group": "Capabilities",
+      "description": "A subordinate node in an activity system: a specific activity that supports one or more core capabilities."
+    },
+    {
+      "id": "ManagementSystem",
+      "label": "Management System",
+      "group": "Management Systems",
+      "description": "A system, structure or process that builds and sustains the must-have capabilities and supports the strategic choices, such as strategy reviews, budgeting, talent development and measurement."
+    },
+    {
+      "id": "StrategyDialogue",
+      "label": "Strategy Dialogue",
+      "group": "Management Systems",
+      "subClassOf": "ManagementSystem",
+      "description": "A recurring review in which leaders revisit, test and refine the strategic choices, for example an annual strategy review between a business unit and corporate leadership."
+    },
+    {
+      "id": "ResourceAllocationSystem",
+      "label": "Resource Allocation System",
+      "group": "Management Systems",
+      "subClassOf": "ManagementSystem",
+      "description": "The budgeting and investment processes that direct money, people and time toward the chosen playing fields and capabilities, and away from those the strategy rules out."
+    },
+    {
+      "id": "TalentDevelopmentSystem",
+      "label": "Talent Development System",
+      "group": "Management Systems",
+      "subClassOf": "ManagementSystem",
+      "description": "The hiring, training, career development and incentive systems that build the people capabilities the strategy depends on."
+    },
+    {
+      "id": "Measure",
+      "label": "Measure",
+      "group": "Management Systems",
+      "description": "A measure of success used to track whether the strategy is working, such as market share, consumer preference or cost position. Measures make the winning aspiration concrete and show whether capabilities are being built."
+    },
+    {
+      "id": "Organization",
+      "iri": "http://www.w3.org/ns/org#Organization",
+      "label": "Organization",
+      "group": "Actors",
+      "description": "An organization, as defined by the W3C Organization Ontology, that makes and follows strategic choices."
+    },
+    {
+      "id": "Competitor",
+      "label": "Competitor",
+      "group": "Actors",
+      "subClassOf": "Organization",
+      "description": "An organization that competes for the same consumers and customers. The winning aspiration names the best competitors the organization intends to beat."
+    },
+    {
+      "id": "Consumer",
+      "label": "Consumer",
+      "group": "Actors",
+      "description": "A person or organization that actually uses the goods or services offered by the organization."
+    },
+    {
+      "id": "Customer",
+      "label": "Customer",
+      "group": "Actors",
+      "description": "The person or organization that buys the goods or services from the organization. The customer is not always the consumer of the product or service."
+    },
+    {
+      "id": "InternalCustomer",
+      "label": "Internal Customer",
+      "group": "Actors",
+      "subClassOf": "Customer",
+      "description": "An employee or unit within the organization that depends on another part of the organization for goods or services."
+    },
+    {
+      "id": "ExternalCustomer",
+      "label": "External Customer",
+      "group": "Actors",
+      "subClassOf": "Customer",
+      "description": "A customer who purchases the organization's products or services and is not part of the organization."
+    }
+  ],
+  "properties": [
+    { "id": "Organization.strategy", "kind": "object", "domain": "Organization", "range": "Strategy", "description": "The strategy the organization has chosen." },
+    { "id": "Organization.activitySystem", "kind": "object", "domain": "Organization", "range": "ActivitySystem", "description": "The activity system the organization has built to deliver its strategy." },
+
+    { "id": "Strategy.title", "kind": "datatype", "domain": "Strategy", "range": "xsd:string", "description": "Human-readable title for the strategy." },
+    { "id": "Strategy.status", "kind": "datatype", "domain": "Strategy", "range": "xsd:string", "description": "Whether the strategy is a draft, in active use, or no longer in use." },
+    { "id": "Strategy.startDate", "kind": "datatype", "domain": "Strategy", "range": "xsd:dateTime", "description": "When the organization started following this strategy." },
+    { "id": "Strategy.endDate", "kind": "datatype", "domain": "Strategy", "range": "xsd:dateTime", "description": "When the organization stopped following this strategy." },
+    { "id": "Strategy.winningAspiration", "kind": "object", "domain": "Strategy", "range": "WinningAspiration", "description": "Cascade choice 1: the winning aspiration that is part of the strategy." },
+    { "id": "Strategy.whereToPlay", "kind": "object", "domain": "Strategy", "range": "WhereToPlay", "description": "Cascade choice 2: the where-to-play choice that is part of the strategy." },
+    { "id": "Strategy.howToWin", "kind": "object", "domain": "Strategy", "range": "HowToWin", "description": "Cascade choice 3: the how-to-win choice that is part of the strategy." },
+    { "id": "Strategy.coreCapability", "kind": "object", "domain": "Strategy", "range": "CoreCapability", "description": "Cascade choice 4: the must-have capabilities required for this strategy." },
+    { "id": "Strategy.managementSystem", "kind": "object", "domain": "Strategy", "range": "ManagementSystem", "description": "Cascade choice 5: the management systems selected to support the strategy." },
+    { "id": "Strategy.parentStrategy", "kind": "object", "domain": "Strategy", "range": "Strategy", "description": "The strategy one level up in the organization (for example corporate above business unit, business unit above brand). The parent's where-to-play and how-to-win choices set the context and aspiration for this strategy, which is how choices cascade through the organization." },
+
+    { "id": "WinningAspiration.aspirationStatement", "kind": "datatype", "domain": "WinningAspiration", "range": "xsd:string", "description": "A statement of what the organization is trying to achieve: what winning looks like." },
+    { "id": "WinningAspiration.consumerContext", "kind": "object", "domain": "WinningAspiration", "range": "ConsumerSegment", "description": "Who the organization is focused on winning with: its most important consumers." },
+    { "id": "WinningAspiration.customerContext", "kind": "object", "domain": "WinningAspiration", "range": "CustomerSegment", "description": "Who the organization is focused on winning with among customers, such as the retail or channel partners that buy from it." },
+    { "id": "WinningAspiration.competitorContext", "kind": "object", "domain": "WinningAspiration", "range": "Competitor", "description": "Who the organization is focused on winning against: the very best competitors." },
+    { "id": "WinningAspiration.successMeasure", "kind": "object", "domain": "WinningAspiration", "range": "Measure", "description": "The measures that show whether the organization is winning." },
+
+    { "id": "WhereToPlay.statement", "kind": "datatype", "domain": "WhereToPlay", "range": "xsd:string", "description": "A short statement of the chosen playing field." },
+    { "id": "WhereToPlay.excludedOption", "kind": "datatype", "domain": "WhereToPlay", "range": "xsd:string", "description": "A playing field the organization has explicitly decided not to play in. Choosing where not to play is as important as choosing where to play." },
+    { "id": "WhereToPlay.servesAspiration", "kind": "object", "domain": "WhereToPlay", "range": "WinningAspiration", "description": "The winning aspiration this playing field is chosen to achieve." },
+    { "id": "WhereToPlay.geography", "kind": "object", "domain": "WhereToPlay", "range": "Geography", "description": "In what countries or regions will you seek to compete?" },
+    { "id": "WhereToPlay.productType", "kind": "object", "domain": "WhereToPlay", "range": "ProductType", "description": "What types of products and services will you offer?" },
+    { "id": "WhereToPlay.consumerSegment", "kind": "object", "domain": "WhereToPlay", "range": "ConsumerSegment", "description": "What groups of consumers will you target? In which price tier? Meeting which consumer needs?" },
+    { "id": "WhereToPlay.distributionChannel", "kind": "object", "domain": "WhereToPlay", "range": "DistributionChannel", "description": "How will you reach your customers? What channels will you use?" },
+    { "id": "WhereToPlay.verticalStageOfProduction", "kind": "object", "domain": "WhereToPlay", "range": "VerticalStageOfProduction", "description": "In what stages of production will you engage? Where along the value chain? How broadly or narrowly?" },
+
+    { "id": "HowToWin.statement", "kind": "datatype", "domain": "HowToWin", "range": "xsd:string", "description": "A short statement of how the organization will win." },
+    { "id": "HowToWin.appliesTo", "kind": "object", "domain": "HowToWin", "range": "WhereToPlay", "description": "The playing field on which this way of winning applies. A how-to-win choice only makes sense in the context of a where-to-play choice." },
+    { "id": "HowToWin.competitiveAdvantage", "kind": "object", "domain": "HowToWin", "range": "CompetitiveAdvantage", "description": "The competitive advantage (cost leadership or differentiation) the organization will build." },
+    { "id": "HowToWin.valueProposition", "kind": "object", "domain": "HowToWin", "range": "ValueProposition", "description": "The value proposition offered to consumers and customers." },
+
+    { "id": "ValueProposition.statement", "kind": "datatype", "domain": "ValueProposition", "range": "xsd:string", "description": "The promise made to consumers and customers." },
+    { "id": "ValueProposition.consumerSegment", "kind": "object", "domain": "ValueProposition", "range": "ConsumerSegment", "description": "The consumer segment the value proposition is designed for." },
+
+    { "id": "ConsumerSegment.priceTier", "kind": "datatype", "domain": "ConsumerSegment", "range": "xsd:string", "description": "The price tier the segment buys in, for example value, mid-tier or premium." },
+    { "id": "ConsumerSegment.need", "kind": "datatype", "domain": "ConsumerSegment", "range": "xsd:string", "description": "The consumer need the organization will meet for this segment." },
+
+    { "id": "CoreCapability.statement", "kind": "datatype", "domain": "CoreCapability", "range": "xsd:string", "description": "What the capability is and why it is distinctive." },
+    { "id": "CoreCapability.enables", "kind": "object", "domain": "CoreCapability", "range": "HowToWin", "description": "The how-to-win choice this capability makes possible." },
+    { "id": "CoreCapability.supportingActivity", "kind": "object", "domain": "CoreCapability", "range": "Activity", "description": "The activities that support the core capability." },
+    { "id": "CoreCapability.reinforcingRelationship", "kind": "object", "domain": "CoreCapability", "range": "CoreCapability", "description": "Links core capabilities within the same organization that strengthen one another." },
+    { "id": "CoreCapability.reinforcingRod", "kind": "object", "domain": "CoreCapability", "range": "CoreCapability", "description": "Links core capabilities across different organizations or levels, for example a business unit drawing on a corporate capability." },
+    { "id": "ActivitySystem.coreCapability", "kind": "object", "domain": "ActivitySystem", "range": "CoreCapability", "description": "The core capabilities that make up the activity system." },
+
+    { "id": "ManagementSystem.statement", "kind": "datatype", "domain": "ManagementSystem", "range": "xsd:string", "description": "What the management system does." },
+    { "id": "ManagementSystem.cadence", "kind": "datatype", "domain": "ManagementSystem", "range": "xsd:string", "description": "How often the system runs, for example quarterly or annually." },
+    { "id": "ManagementSystem.supportsCapability", "kind": "object", "domain": "ManagementSystem", "range": "CoreCapability", "description": "The must-have capability this management system builds or sustains." },
+    { "id": "ManagementSystem.measure", "kind": "object", "domain": "ManagementSystem", "range": "Measure", "description": "The measures this management system tracks." },
+    { "id": "Measure.target", "kind": "datatype", "domain": "Measure", "range": "xsd:string", "description": "The target value or threshold that counts as success." },
+
+    { "id": "Consumer.consumerSegment", "kind": "object", "domain": "Consumer", "range": "ConsumerSegment", "description": "The consumer segment this consumer belongs to." },
+    { "id": "Customer.customerSegment", "kind": "object", "domain": "Customer", "range": "CustomerSegment", "description": "The customer segment this customer belongs to." }
+  ],
+  "example": {
+    "title": "Olay (Procter & Gamble)",
+    "source": "Summarised from the Olay case in Playing to Win. In the late 1990s Olay was a small, ageing brand; P&G's choices below turned it into a leading skin-care brand.",
+    "choices": [
+      { "step": 1, "items": ["Turn Olay into a leading, credible skin-care brand that wins with women who want to fight the signs of ageing, against prestige department-store brands as well as mass brands."] },
+      { "step": 2, "items": ["Consumer segment: women aged roughly 35 to 50 concerned about visible signs of ageing.", "Product type: anti-ageing skin care, led by Olay Total Effects.", "Channel: mass retail (drug, grocery and mass merchants), positioned as 'masstige' between mass and prestige prices.", "Where not to play: competing only on low price in basic moisturisers."] },
+      { "step": 3, "items": ["Differentiation: a scientifically credible product that fights the seven signs of ageing, priced well above mass brands but well below prestige.", "Partner with retailers to create a premium skin-care experience in the mass channel."] },
+      { "step": 4, "items": ["Deep consumer understanding", "Product innovation in skin science", "Brand building", "Go-to-market partnerships with retailers", "Global scale"] },
+      { "step": 5, "items": ["Strategy dialogues between the brand, the beauty business and corporate.", "Consumer research and innovation programmes that keep the product pipeline full.", "Measures of consumer trial, repeat purchase, share of the anti-ageing segment and retailer performance."] }
+    ]
+  }
+}

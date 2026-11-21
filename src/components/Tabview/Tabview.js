@@ -1,65 +1,43 @@
 import React from 'react';
-import { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import { Tabs, Tab } from 'react-bootstrap';
 import StrategyGraph from '../StrategyGraphView/StrategyGraph';
 import StrategyGridView from './StrategyGridView';
-import { Tabs, Tab, Container, Spinner } from 'react-bootstrap';
+import CascadeView from './CascadeView';
+import ExampleView from './ExampleView';
+import strategy from '../../ontology';
 
-
-const Tabview = (props) => {
-
-    const [graph, setGraph] = useState({});
-    const [showResult, setShowResult] = useState(false);
-
-    const getGraphData = async () => {
-        try {
-            const response = await fetch('https://adeeltestfunctionapp.azurewebsites.net/api/GetGraphStructure?clientId=apim-AdeelTestFunctionApp-apim2', {
-                method: 'GET'
-            });
-            const graphData = await response.json();            
-            const updatedGraphData = { ...graphData }
-            console.log(updatedGraphData)
-            setGraph(updatedGraphData)
-            setShowResult(true);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    useEffect(() => {
-        if (!props.fetched) {
-            getGraphData();
-        }
-    }, []); // passing an empty array as second argument triggers the callback in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
-
-    return (
-        //<Container>
-        <div>
-            { showResult ? (
-                <Tabs defaultActiveKey="graphview" id="uncontrolled-tab-example">
-                    <Tab eventKey="gridview" title="Grid View">
-                        <br />
-                        <StrategyGridView />
-                    </Tab>
-                    <Tab eventKey="graphview" title="Graph View">
-                        <br />
-                        <StrategyGraph graph={graph} />
-                    </Tab>
-                    <Tab eventKey="example" title="Example">
-                        <br />
-                        This tab will contain an example for the ontology.
-                    </Tab>
-                </Tabs>
-            ): (
-                <div>
-                    <br />
-                    <Spinner animation="border" variant="success" />
-                    <h2>Loading</h2>
-                </div>
-            )}
-        </div>
-        //</Container>
-    );
-};
+// The ontology used to be fetched from an Azure Function at runtime. That
+// service is no longer reachable, which left this page stuck on its loading
+// spinner. The ontology now ships with the site (src/ontology/strategy.json).
+const Tabview = () => (
+   <div className="text-left">
+       <h2>{strategy.title}</h2>
+       <p className="lead">{strategy.description}</p>
+       <p>
+           <a href={`${process.env.PUBLIC_URL}/ontologies/strategy.ttl`} download>
+               Download the ontology (Turtle / OWL)
+           </a>
+       </p>
+       <Tabs defaultActiveKey="cascade" id="ontology-tabs" mountOnEnter>
+           <Tab eventKey="cascade" title="Choice Cascade">
+               <br />
+               <CascadeView />
+           </Tab>
+           <Tab eventKey="gridview" title="Grid View">
+               <br />
+               <StrategyGridView />
+           </Tab>
+           <Tab eventKey="graphview" title="Graph View">
+               <br />
+               <StrategyGraph />
+           </Tab>
+           <Tab eventKey="example" title="Example">
+               <br />
+               <ExampleView />
+           </Tab>
+       </Tabs>
+       <p className="text-muted mt-4"><small>Source: {strategy.citation}</small></p>
+   </div>
+);
 
 export default Tabview;
