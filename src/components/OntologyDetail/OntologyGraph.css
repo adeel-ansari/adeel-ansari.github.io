@@ -1,190 +1,304 @@
-/* ── Layout ──────────────────────────────────────────────────── */
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
 
-.graph-wrap {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.graph {
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-.graph-hint {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-bottom: 0.6rem;
-}
-
-/* ── SVG ─────────────────────────────────────────────────────── */
-
-.graph svg {
+.vowl-wrap {
+    position: relative;
     width: 100%;
-    height: auto;
-    background-color: var(--surface);
+    height: 650px;
+    background: #faf8f4;
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    overflow: hidden;
 }
 
-/* ── Links ───────────────────────────────────────────────────── */
+/* ── SVG canvas ──────────────────────────────────────────────────────────── */
 
-.link-line {
-    stroke: #cfc5b8;
-    stroke-width: 1.2px;
+.vowl-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
 }
 
-.link.subclass .link-line {
-    stroke-dasharray: 4 3;
-    stroke: #d9cfc4;
+.vowl-svg:active {
+    cursor: grabbing;
 }
 
-.arrow-head {
-    fill: #cfc5b8;
+/* ── Edges ───────────────────────────────────────────────────────────────── */
+
+.vowl-link-path {
+    fill: none;
+    stroke: #c8bdb0;
+    stroke-width: 1.4px;
+    transition: stroke 0.15s, stroke-width 0.15s;
 }
 
-.link-label {
-    font: 8px sans-serif;
+.vowl-link--subclass .vowl-link-path {
+    stroke-dasharray: 5 3;
+    stroke: #d9cfC4;
+}
+
+.vowl-link--hi .vowl-link-path {
+    stroke: var(--accent);
+    stroke-width: 2px;
+}
+
+.vowl-link-label {
+    font: 10px sans-serif;
     fill: var(--text-muted);
     pointer-events: none;
+    paint-order: stroke;
+    stroke: #faf8f4;
+    stroke-width: 3px;
 }
 
-/* ── Nodes ───────────────────────────────────────────────────── */
+.vowl-link--hi .vowl-link-label {
+    fill: var(--primary);
+    font-weight: 600;
+}
 
-.node {
+/* ── Nodes ───────────────────────────────────────────────────────────────── */
+
+.vowl-node {
     cursor: pointer;
 }
 
-.node circle {
-    stroke: var(--surface);
+.vowl-node-shape {
+    stroke: rgba(255, 255, 255, 0.35);
     stroke-width: 2px;
-    transition: stroke 0.15s, stroke-width 0.15s, filter 0.15s;
+    transition: filter 0.15s, stroke 0.15s, stroke-width 0.15s;
 }
 
-.node:hover circle {
-    stroke: var(--accent);
+.vowl-node:hover .vowl-node-shape {
+    stroke: #fff;
     stroke-width: 2.5px;
+    filter: brightness(1.1);
 }
 
-.node.selected-node circle {
-    stroke: var(--accent);
+.vowl-node--selected .vowl-node-shape {
+    stroke: #fff;
     stroke-width: 3px;
-    filter: drop-shadow(0 0 5px rgba(192, 122, 61, 0.45));
+    filter: drop-shadow(0 0 8px rgba(192, 122, 61, 0.7));
 }
 
-.node-text {
-    font: 11px sans-serif;
-    fill: var(--text);
-    paint-order: stroke;
-    stroke: var(--surface);
-    stroke-width: 3px;
+.vowl-node--dim .vowl-node-shape {
+    opacity: 0.35;
+}
+
+.vowl-node--dim .vowl-node-label {
+    opacity: 0.35;
+}
+
+.vowl-node-label {
+    font: bold 10.5px sans-serif;
+    fill: #fff;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ── Controls overlay ────────────────────────────────────────────────────── */
+
+.vowl-controls {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     pointer-events: none;
 }
 
-/* ── Legend ──────────────────────────────────────────────────── */
-
-.legend text {
-    font: 11px sans-serif;
-    fill: var(--text-muted);
-}
-
-/* ── Side panel ──────────────────────────────────────────────── */
-
-.node-panel {
-    width: 280px;
-    flex-shrink: 0;
-    background: var(--surface);
+.vowl-btn {
+    pointer-events: all;
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    position: relative;
+    border-radius: 4px;
+    padding: 3px 9px;
+    font-size: 0.78rem;
+    color: var(--text);
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background 0.1s;
 }
 
-.node-panel-close {
+.vowl-btn:hover {
+    background: #fff;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.vowl-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: rgba(250, 248, 244, 0.8);
+    padding: 2px 6px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* ── Legend ──────────────────────────────────────────────────────────────── */
+
+.vowl-legend {
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+.vowl-legend-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.vowl-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.vowl-legend-name {
+    white-space: nowrap;
+}
+
+.vowl-legend-edge {
+    margin-top: 2px;
+}
+
+.vowl-legend-line {
+    width: 22px;
+    height: 2px;
+    flex-shrink: 0;
+    background: #b09980;
+}
+
+.vowl-legend-line--dashed {
+    background: repeating-linear-gradient(
+        90deg,
+        #c8bdb0 0px, #c8bdb0 5px,
+        transparent 5px, transparent 8px
+    );
+}
+
+/* ── Detail panel ────────────────────────────────────────────────────────── */
+
+.vowl-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.97);
+    border-left: 1px solid var(--border);
+    padding: 1.4rem 1.25rem;
+    overflow-y: auto;
+    animation: vowl-panel-in 0.18s ease-out;
+}
+
+@keyframes vowl-panel-in {
+    from { transform: translateX(20px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+
+.vowl-panel-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
     font-size: 1.1rem;
     color: var(--text-muted);
     cursor: pointer;
     line-height: 1;
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
-.node-panel-close:hover {
+.vowl-panel-close:hover {
     background: var(--bg);
     color: var(--text);
 }
 
-.node-panel-group {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.07em;
+.vowl-panel-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
 }
 
-.node-panel-title {
-    font-size: 1.05rem;
-    margin: 0.3rem 0 0.2rem;
+.vowl-panel-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.3rem;
+    padding-right: 1.5rem;
 }
 
-.node-panel-sub {
+.vowl-panel-sub {
     font-size: 0.82rem;
     color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
-.node-panel-desc {
-    font-size: 0.85rem;
+.vowl-panel-desc {
+    font-size: 0.84rem;
     color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
 }
 
-.node-panel-props h4 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+.vowl-panel-section {
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.vowl-panel-section h4 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
-.node-panel-props table {
-    width: 100%;
-    font-size: 0.8rem;
-    border-collapse: collapse;
+.vowl-panel-prop {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-size: 0.82rem;
+    margin-bottom: 0.4rem;
 }
 
-.node-panel-props th {
-    text-align: left;
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding: 0.25rem 0.4rem;
-    border-bottom: 1px solid var(--border);
-    background: none;
-}
-
-.node-panel-props td {
-    padding: 0.3rem 0.4rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-    color: var(--text-muted);
-}
-
-.node-panel-props tr:last-child td {
-    border-bottom: none;
-}
-
-.node-panel-props code {
+.vowl-prop-name {
+    font-family: 'SFMono-Regular', Consolas, monospace;
     font-size: 0.78rem;
-    background: none;
-    padding: 0;
     color: var(--primary);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vowl-prop-arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.vowl-prop-range {
+    color: var(--text-muted);
+    font-size: 0.8rem;
 }

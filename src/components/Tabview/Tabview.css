@@ -70,6 +70,10 @@
     padding: 2rem 0;
 }
 
+.onto-tab-body--graph {
+    padding: 1.25rem 0 0;
+}
+
 .onto-detail-citation {
     font-size: 0.8rem;
     color: var(--text-muted);

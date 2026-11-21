@@ -5,7 +5,6 @@ import { ONTOLOGY_BY_SLUG } from '../../ontology/registry';
 import OntologyGridView from './OntologyGridView';
 import OntologyGraph    from './OntologyGraph';
 import HierarchyView    from './HierarchyView';
-// Strategy-specific tabs (cascade + example) reuse the existing components
 import CascadeView      from '../Tabview/CascadeView';
 import ExampleView      from '../Tabview/ExampleView';
 import './OntologyDetailPage.css';
@@ -17,13 +16,13 @@ const OntologyDetailPage = () => {
     if (!entry) return <Navigate to="/ontologies" replace />;
 
     const { tag, title, module: ont } = entry;
-    const data = ont.default;
+    const data         = ont.default;
     const hasCascade   = Array.isArray(data.cascade);
     const hasHierarchy = Array.isArray(data.hierarchy) && !hasCascade;
     const hasExample   = !!data.example;
 
-    // Default to the first meaningful tab
-    const defaultTab = hasCascade ? 'cascade' : hasHierarchy ? 'hierarchy' : 'grid';
+    // Framework tab label differs by type
+    const frameworkLabel = hasCascade ? 'Choice Cascade' : 'Hierarchy';
 
     return (
         <div>
@@ -37,36 +36,34 @@ const OntologyDetailPage = () => {
                         download
                         className="onto-detail-download"
                     >
-                        Download Turtle / OWL
+                        ↓ Download Turtle / OWL
                     </a>
                 )}
             </div>
 
-            <Tabs defaultActiveKey={defaultTab} id="ontology-tabs" mountOnEnter className="onto-tabs">
-                {hasCascade && (
-                    <Tab eventKey="cascade" title="Choice Cascade">
+            <Tabs defaultActiveKey="graph" id="ontology-tabs" mountOnEnter className="onto-tabs">
+                <Tab eventKey="graph" title="Graph">
+                    <div className="onto-tab-body onto-tab-body--graph">
+                        <OntologyGraph ontologyModule={ont} />
+                    </div>
+                </Tab>
+
+                {(hasCascade || hasHierarchy) && (
+                    <Tab eventKey="framework" title={frameworkLabel}>
                         <div className="onto-tab-body">
-                            <CascadeView ontologyModule={ont} />
+                            {hasCascade
+                                ? <CascadeView ontologyModule={ont} />
+                                : <HierarchyView ontologyModule={ont} />}
                         </div>
                     </Tab>
                 )}
-                {hasHierarchy && (
-                    <Tab eventKey="hierarchy" title="Hierarchy">
-                        <div className="onto-tab-body">
-                            <HierarchyView ontologyModule={ont} />
-                        </div>
-                    </Tab>
-                )}
-                <Tab eventKey="grid" title="Grid View">
+
+                <Tab eventKey="classes" title="Classes">
                     <div className="onto-tab-body">
                         <OntologyGridView ontologyModule={ont} />
                     </div>
                 </Tab>
-                <Tab eventKey="graph" title="Graph View">
-                    <div className="onto-tab-body">
-                        <OntologyGraph ontologyModule={ont} />
-                    </div>
-                </Tab>
+
                 {hasExample && (
                     <Tab eventKey="example" title="Example">
                         <div className="onto-tab-body">
