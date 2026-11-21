@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="https://www.adeel-ansari.github.io/ontologies/projectmanagement" uri="projectmanagement.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://www.adeel-ansari.github.io/ontologies/businessmodel" uri="businessmodel.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://www.adeel-ansari.github.io/ontologies/productroadmap" uri="product.ttl"/>
     <uri id="User Entered Import Resolution" name="https://www.adeel-ansari.github.io/ontologies/strategy" uri="strategy.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
 </catalog>

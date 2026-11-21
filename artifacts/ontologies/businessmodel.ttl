@@ -7,7 +7,9 @@
 @base <https://www.adeel-ansari.github.io/ontologies/businessmodel> .
 
 <https://www.adeel-ansari.github.io/ontologies/businessmodel> rdf:type owl:Ontology ;
-                                                               owl:imports <https://www.adeel-ansari.github.io/ontologies/strategy> .
+                                                               owl:imports <https://www.adeel-ansari.github.io/ontologies/strategy> ;
+                                                               owl:imports <https://www.adeel-ansari.github.io/ontologies/productroadmap> .
+
 
 #################################################################
 #    Object Properties

@@ -7,7 +7,9 @@
 @base <https://www.adeel-ansari.github.io/ontologies/productroadmap> .
 
 <https://www.adeel-ansari.github.io/ontologies/productroadmap> rdf:type owl:Ontology ;
-                                                                owl:imports <https://www.adeel-ansari.github.io/ontologies/strategy> .
+                                                                owl:imports <https://www.adeel-ansari.github.io/ontologies/businessmodel> ,
+                                                                            <https://www.adeel-ansari.github.io/ontologies/projectmanagement> ,
+                                                                            <https://www.adeel-ansari.github.io/ontologies/strategy> .
 
 #################################################################
 #    Object Properties
@@ -17,6 +19,14 @@
 :Product.strategy rdf:type owl:ObjectProperty ;
                   rdfs:domain :Product ;
                   rdfs:range <https://www.adeel-ansari.github.io/ontologies/strategy#strategy> .
+
+
+###  https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability.productOrService
+<https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability.productOrService> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <https://www.adeel-ansari.github.io/ontologies/strategy#CoreCapability> ;
+                                                                                         rdfs:range :Product ,
+                                                                                                    :Service ;
+                                                                                         <http://purl.org/dc/terms/description> "Core capabilities manifest themselves in the form of a product or a service."@en .
 
 
 #################################################################
