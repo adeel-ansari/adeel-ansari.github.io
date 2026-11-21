@@ -1,5 +1,5 @@
-import strategyModule from './index';
-import pmModule from './pm';
+import * as strategyModule from './index';
+import * as pmModule from './pm';
 
 // Central registry of all ontologies.
 // Add a new entry here whenever a new ontology JSON + module is created.
